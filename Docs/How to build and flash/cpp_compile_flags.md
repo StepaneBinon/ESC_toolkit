@@ -47,10 +47,11 @@ These can be useful for runtime performance measurement and test coverage evalua
 
 ### 🔗 Linking Options
 
-`-l`, `-T`
+`-l`, `-T`, `-Wl`
 
 - **`-l<name>`** — Link against library `<name>` (searches system and `-L` paths).  
 - **`-T<file>`** — Use a custom linker script (often used in embedded systems).
+- **`-Wl,<flag>`** — passes the following option to the linker not the compiler (e.g., )
 
 ### 📁 Directory Search Paths
 
