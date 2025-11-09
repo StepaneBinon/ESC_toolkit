@@ -1,6 +1,10 @@
 # Commands to use with the building toolchain
 
-The toolchain we use for the project is `arm-none-eabi`: 
+To gain basic knowledge about the compilation process, relies on [2]. For this project we rely on the famous `gnu` toolkit. The following image sum-it up.
+
+![alt text](.\Images\Gnu_DeBuger\toolchain.png)
+
+The toolchain we use for the project is `arm-none-eabi-gcc`: 
 
  - arm: MCU architecture
  - none: No operating system (bare metal)
@@ -32,3 +36,5 @@ Command to disassembly (binary -> assembly)
 ## Ressources
 
 [1] https://manpages.debian.org/testing/binutils-arm-none-eabi/index.html
+
+[2] Compilation process: https://www.geeksforgeeks.org/cpp/how-to-compile-a-cpp-program-using-gcc/ 
