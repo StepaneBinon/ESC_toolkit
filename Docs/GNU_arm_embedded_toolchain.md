@@ -1,4 +1,4 @@
-# Commands to use with the toolchain
+# Commands to use with the building toolchain
 
 The toolchain we use for the project is `arm-none-eabi`: 
 
@@ -7,16 +7,17 @@ The toolchain we use for the project is `arm-none-eabi`:
  - eabi: Embedded Application Binary Interface
  - nosys.specs: No system (will loop indefinitly)
 
-It is used to compile the code automatically to the coherent format needed by the hardware. The documentation is here: https://manpages.debian.org/testing/binutils-arm-none-eabi/index.html.
+It is used to compile the code automatically to the coherent format needed by the hardware. The documentation cqn be found in [1].
 
-Command to build the main without an OS (Embedded)
+Command to build the main without an OS (Embedded), all C++ tags can be added (refer to the doc expliciting existing tags).
 ```bash
 arm-none-eabi-gcc main.cpp --specs=nosys.specs
-# arm: MCU architecture
-# none: No operating system (bare metal)
-# eabi: Embedded Application Binary Interface
-# nosys.specs: No system (will loop indefinitly)
+# to specify the mcu architecture, this is useless if architecture have be precised during making of a.out
+arm-none-eabi-gcc -mcpu=cortex-m4
 ```
+
+Command to connect GDB to OpenOCD
+
 
 Command to read an ELF file
 ```bash
@@ -27,3 +28,7 @@ arm-none-eabi-readelf -h -S -l a.out
 ```
 
 Command to disassembly (binary -> assembly)
+
+## Ressources
+
+[1] https://manpages.debian.org/testing/binutils-arm-none-eabi/index.html
