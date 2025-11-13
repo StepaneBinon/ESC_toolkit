@@ -41,9 +41,13 @@ sudo udevadm trigger
 
 ## OpenOCD
 
+Build from source or use simple command
+sudo apt install openocd
 https://openocd.org/doc-release/README
 
-## ST-Link driver
+## GNU toolchain
 
-all needed pckg must be installed
-https://github.com/stlink-org/stlink/blob/testing/doc/compiling.md
+https://developer.arm.com/downloads/-/gnu-rm
+Install tarball in WSL and extract
+
+## Install Nuttx
