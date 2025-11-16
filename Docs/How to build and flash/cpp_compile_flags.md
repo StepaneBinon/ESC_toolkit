@@ -1,5 +1,12 @@
 # Common GCC Compilation Flags for C++
 
+----
+### TODO
+
+Section architecture a revoir
+
+----
+
 This document summarizes the most relevant GCC flags for C++ compilation.  
 A complete explanation can be found in [GCC Manual][1] and an overview in [Medium Article][2].
 
@@ -59,6 +66,23 @@ These can be useful for runtime performance measurement and test coverage evalua
 
 - **`-I<dir>`** — Add directory `<dir>` to the list of include paths.  
 - **`-L<dir>`** — Add directory `<dir>` to the library search path.
+
+### 🏠 Architecture
+
+-mcpu=cortex-m4
+Select the instruction set and feature for a given architecture
+
+-mthumb
+Produce Thumb instructions
+
+-std=c++17
+Selected C++ standard
+
+-ffreestanding
+No OS, no assumption, ... perfect for embedded
+
+-nostdlib
+No lib, statup script and all
 
 ### ⚙️ Code Generation
 

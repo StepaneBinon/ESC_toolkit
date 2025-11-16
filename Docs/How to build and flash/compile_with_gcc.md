@@ -13,12 +13,27 @@ The toolchain we use for the project is `arm-none-eabi-gcc`:
 
 It is used to compile the code automatically to the coherent format needed by the hardware. The documentation cqn be found in [1].
 
-Command to build the main without an OS (Embedded), all C++ tags can be added (refer to the doc expliciting existing tags).
+Command to build the main without an OS (Embedded) for arm architecture, all C++ tags can be added (refer to the doc expliciting existing tags).
 ```bash
-arm-none-eabi-gcc main.cpp --specs=nosys.specs
-# to specify the mcu architecture, this is useless if architecture have be precised during making of a.out
-arm-none-eabi-gcc -mcpu=cortex-m4
+arm-none-eabi-gcc \
+  -mcpu=cortex-m4 -mthumb \
+  -std=c++17 -O0 -g \
+  -ffreestanding -nostdlib \
+  -c main.cpp -o main.o
+# -mcpu=cortex-m4 : generate code for Cortex-M4.
+# -mthumb : use Thumb instruction set (what Cortex-M actually runs).
+# -O0 : no optimizations, so the assembly is “literal” and easier to read.
+# -g : include debug info (handy later with GDB).
+# -ffreestanding : tell the compiler there is no hosted OS, no normal main/argc/argv conventions.
+# -nostdlib : don’t try to link libc, libstdc++, etc.
 ```
+
+You can get the assembly code by disassembling the object file
+```bash
+arm-none-eabi-objdump -d -S main.o > main.asm
+```
+
+
 
 Command to connect GDB to OpenOCD
 
