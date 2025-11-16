@@ -50,4 +50,19 @@ https://openocd.org/doc-release/README
 https://developer.arm.com/downloads/-/gnu-rm
 Install tarball in WSL and extract
 
+And GDB seems to need 'sudo apt install libncurses5' to work.
+
 ## Install Nuttx
+
+https://nuttx.apache.org/docs/latest/quickstart/index.html
+
+Create a /nuttxspace/ and clone inside
+git clone https://github.com/apache/nuttx.git nuttx
+git clone https://github.com/apache/nuttx-apps apps
+
+Go to nuttx.md
+
+## Other
+
+Uzinp seems neeeded sometimes bu Nuttx
+sudo apt install unzip
