@@ -1,0 +1,3 @@
+[submodule "TARGET/STM32CubeG4"]
+	path = TARGET/STM32CubeG4
+	url = https://github.com/STMicroelectronics/STM32CubeG4.git
