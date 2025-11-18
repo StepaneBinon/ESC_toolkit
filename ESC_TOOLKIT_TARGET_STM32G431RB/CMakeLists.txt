@@ -109,6 +109,7 @@ add_custom_command(
     TARGET ${PROJECT_NAME}.elf POST_BUILD
     COMMAND ${CMAKE_OBJCOPY} -O ihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${PROJECT_NAME}.hex
     COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:${PROJECT_NAME}.elf> ${PROJECT_NAME}.bin
-    COMMAND ${CMAKE_SIZE} $<TARGET_FILE:${PROJECT_NAME}.elf>
-    COMMENT "Generating .hex, .bin, and printing size report"
+    COMMAND bash ${CMAKE_SOURCE_DIR}/memory_report.sh $<TARGET_FILE:${PROJECT_NAME}.elf>
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    COMMENT "Build complete"
 )

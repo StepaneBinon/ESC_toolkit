@@ -67,8 +67,12 @@ SECTIONS
     . = ALIGN(8);
     PROVIDE(end = .);
     PROVIDE(_end = .);
+    PROVIDE(_heap_start = .);
     . = . + 0x400;
+    PROVIDE(_heap_end = .);
+    PROVIDE(_stack_start = .);
     . = . + 0x800;
+    PROVIDE(_stack_end = .);
     . = ALIGN(8);
   } > RAM
 }

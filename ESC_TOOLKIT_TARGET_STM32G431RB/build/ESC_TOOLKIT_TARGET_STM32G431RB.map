@@ -685,10 +685,14 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
  *fill*         0x0000000020000004        0x4 
                 [!provide]                        PROVIDE (end = .)
                 0x0000000020000008                PROVIDE (_end = .)
+                [!provide]                        PROVIDE (_heap_start = .)
                 0x0000000020000408                . = (. + 0x400)
  *fill*         0x0000000020000008      0x400 
+                [!provide]                        PROVIDE (_heap_end = .)
+                [!provide]                        PROVIDE (_stack_start = .)
                 0x0000000020000c08                . = (. + 0x800)
  *fill*         0x0000000020000408      0x800 
+                [!provide]                        PROVIDE (_stack_end = .)
                 0x0000000020000c08                . = ALIGN (0x8)
 OUTPUT(ESC_TOOLKIT_TARGET_STM32G431RB.elf elf32-littlearm)
 LOAD linker stubs
