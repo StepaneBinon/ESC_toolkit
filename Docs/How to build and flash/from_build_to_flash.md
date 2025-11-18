@@ -61,7 +61,8 @@ arm-none-eabi-g++ \
   -mcpu=cortex-m4 -mthumb \
   -std=c++17 -O0 -g \
   -ffreestanding -nostdlib \
-  -T stm32g4_min.ld \
-  startup_stm32g4xx.s system_stm32g4xx.c main.cpp \
+  -T linker_minimal.ld \
+  /home/step/ESC_toolkit/TARGET/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s \
+  main.cpp \
   -Wl,--gc-sections -o firmware.elf
 ```
