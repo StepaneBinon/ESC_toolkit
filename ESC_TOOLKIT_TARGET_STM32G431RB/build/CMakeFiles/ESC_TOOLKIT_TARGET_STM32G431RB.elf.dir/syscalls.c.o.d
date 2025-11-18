@@ -1,5 +1,5 @@
 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/syscalls.c.o: \
- /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/syscalls.c \
+ /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c \
  /usr/include/newlib/sys/stat.h /usr/include/newlib/_ansi.h \
  /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
  /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
@@ -15,4 +15,5 @@ CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/syscalls.c.o: \
  /usr/include/newlib/sys/_sigset.h /usr/include/newlib/sys/_timeval.h \
  /usr/include/newlib/sys/timespec.h /usr/include/newlib/sys/_timespec.h \
  /usr/include/newlib/sys/_pthreadtypes.h /usr/include/newlib/sys/sched.h \
- /usr/include/newlib/machine/types.h /usr/include/newlib/sys/_locale.h
+ /usr/include/newlib/machine/types.h /usr/include/newlib/sys/_locale.h \
+ /usr/include/newlib/errno.h /usr/include/newlib/sys/errno.h

@@ -1,50 +1,74 @@
-/* Minimal STM32G4 linker script */
+ENTRY(Reset_Handler)
 
-/* Set the entry point */
-ENTRY(Reset_Handler) 
-
-/* Memory map: adjust sizes if needed */
 MEMORY
 {
   FLASH (rx)  : ORIGIN = 0x08000000, LENGTH = 128K
   RAM   (xrw) : ORIGIN = 0x20000000, LENGTH = 32K
 }
 
-/* Top (end) of stack (used in vector table) */
 _estack = ORIGIN(RAM) + LENGTH(RAM);
 
 SECTIONS
 {
-  /* Vector table at start of flash */
   .isr_vector :
   {
-    KEEP(*(.isr_vector)) /* KEEP = not discard the section even if unused */
+    . = ALIGN(4);
+    KEEP(*(.isr_vector))
+    . = ALIGN(4);
   } > FLASH
 
-  /* Code + const data in flash */
   .text :
   {
-    *(.text*)            /* code */
-    *(.rodata*)          /* const data */
+    . = ALIGN(4);
+    *(.text)
+    *(.text*)
+    *(.glue_7)
+    *(.glue_7t)
+    *(.eh_frame)
+    
     KEEP(*(.init))
     KEEP(*(.fini))
+    
+    . = ALIGN(4);
+    *(.rodata)
+    *(.rodata*)
+    . = ALIGN(4);
+    _etext = .;
   } > FLASH
 
-  /* Initialised data in RAM, image stored in FLASH */
-  .data : AT (ADDR(.text) + SIZEOF(.text))
-  {
-    _sdata = .;          /* start of .data in RAM */
-    *(.data*)
-    _edata = .;          /* end of .data in RAM */
-  } > RAM
-  _sidata = LOADADDR(.data);   /* start of .data init values in FLASH */
+  .ARM.extab : { *(.ARM.extab* .gnu.linkonce.armextab.*) } > FLASH
+  .ARM.exidx : { *(.ARM.exidx* .gnu.linkonce.armexidx.*) } > FLASH
 
-  /* Zero-init data in RAM */
-  .bss (NOLOAD) :
+  _sidata = LOADADDR(.data);
+
+  .data : 
   {
+    . = ALIGN(4);
+    _sdata = .;
+    *(.data)
+    *(.data*)
+    . = ALIGN(4);
+    _edata = .;
+  } > RAM AT> FLASH
+
+  .bss :
+  {
+    . = ALIGN(4);
     _sbss = .;
+    *(.bss)
     *(.bss*)
     *(COMMON)
+    . = ALIGN(4);
     _ebss = .;
+  } > RAM
+
+  ._user_heap_stack :
+  {
+    . = ALIGN(8);
+    PROVIDE(end = .);
+    PROVIDE(_end = .);
+    . = . + 0x400;
+    . = . + 0x800;
+    . = ALIGN(8);
   } > RAM
 }
