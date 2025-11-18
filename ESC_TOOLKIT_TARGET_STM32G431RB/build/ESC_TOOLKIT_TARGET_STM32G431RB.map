@@ -73,7 +73,7 @@ Discarded input sections
                 0x0000000000000000       0x68 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/syscalls.c.o
  .debug_ranges  0x0000000000000000       0x58 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/syscalls.c.o
  .debug_line    0x0000000000000000      0x1e8 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/syscalls.c.o
- .debug_str     0x0000000000000000      0x371 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/syscalls.c.o
+ .debug_str     0x0000000000000000      0x37f CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/syscalls.c.o
  .comment       0x0000000000000000       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/syscalls.c.o
  .debug_frame   0x0000000000000000      0x188 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/syscalls.c.o
  .ARM.attributes
@@ -182,7 +182,7 @@ Discarded input sections
                 0x0000000000000000      0x148 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
  .debug_ranges  0x0000000000000000      0x138 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
  .debug_line    0x0000000000000000      0x686 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
- .debug_str     0x0000000000000000      0xc4b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+ .debug_str     0x0000000000000000      0xc59 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
  .comment       0x0000000000000000       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
  .debug_frame   0x0000000000000000      0x500 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
  .ARM.attributes
@@ -228,7 +228,7 @@ Discarded input sections
                 0x0000000000000000       0x98 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
  .debug_ranges  0x0000000000000000       0x88 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
  .debug_line    0x0000000000000000      0xa29 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
- .debug_str     0x0000000000000000      0x82c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+ .debug_str     0x0000000000000000      0x83a CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
  .comment       0x0000000000000000       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
  .debug_frame   0x0000000000000000      0x23c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
  .ARM.attributes
@@ -310,7 +310,7 @@ Discarded input sections
                 0x0000000000000000      0x128 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .debug_ranges  0x0000000000000000      0x118 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .debug_line    0x0000000000000000      0x808 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
- .debug_str     0x0000000000000000      0xbdc CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+ .debug_str     0x0000000000000000      0xbea CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .comment       0x0000000000000000       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .debug_frame   0x0000000000000000      0x4e8 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .ARM.attributes
@@ -340,7 +340,7 @@ Discarded input sections
                 0x0000000000000000       0x58 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
  .debug_ranges  0x0000000000000000       0x48 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
  .debug_line    0x0000000000000000      0x625 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
- .debug_str     0x0000000000000000      0x563 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ .debug_str     0x0000000000000000      0x571 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
  .comment       0x0000000000000000       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
  .debug_frame   0x0000000000000000      0x14c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
  .ARM.attributes
@@ -747,14 +747,14 @@ LOAD linker stubs
  .debug_line    0x0000000000000316       0xf0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
  .debug_line    0x0000000000000406      0x138 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
 
-.debug_str      0x0000000000000000      0x6f1
- .debug_str     0x0000000000000000      0x199 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
-                                        0x1cd (size before relaxing)
- .debug_str     0x0000000000000199      0x347 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
-                                        0x415 (size before relaxing)
- .debug_str     0x00000000000004e0       0x9b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+.debug_str      0x0000000000000000      0x70d
+ .debug_str     0x0000000000000000      0x1a7 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+                                        0x1db (size before relaxing)
+ .debug_str     0x00000000000001a7      0x355 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+                                        0x423 (size before relaxing)
+ .debug_str     0x00000000000004fc       0x9b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
                                          0xd7 (size before relaxing)
- .debug_str     0x000000000000057b      0x176 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_str     0x0000000000000597      0x176 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
                                         0x20b (size before relaxing)
 
 .debug_frame    0x0000000000000000       0xac

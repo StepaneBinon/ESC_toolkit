@@ -8,17 +8,17 @@ ASM_DEFINES = -DARM_MATH_CM4 -DDEBUG -DSTM32G431xx -DUSE_HAL_DRIVER -D__CORTEX_M
 
 ASM_INCLUDES = -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4 -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/CMSIS/Include -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Include -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Inc -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Inc -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB
 
-ASM_FLAGS = -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -fdata-sections -ffunction-sections -g -x assembler-with-cpp
+ASM_FLAGS = -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -fdata-sections -ffunction-sections -g -fstack-usage -x assembler-with-cpp
 
 C_DEFINES = -DARM_MATH_CM4 -DDEBUG -DSTM32G431xx -DUSE_HAL_DRIVER -D__CORTEX_M4 -Dstm32g431xx
 
 C_INCLUDES = -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4 -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/CMSIS/Include -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Include -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Inc -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Inc -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB
 
-C_FLAGS = -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -fdata-sections -ffunction-sections -g -std=gnu11
+C_FLAGS = -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -fdata-sections -ffunction-sections -g -fstack-usage -std=gnu11
 
 CXX_DEFINES = -DARM_MATH_CM4 -DDEBUG -DSTM32G431xx -DUSE_HAL_DRIVER -D__CORTEX_M4 -Dstm32g431xx
 
 CXX_INCLUDES = -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4 -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/CMSIS/Include -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Include -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Inc -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Inc -I/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB
 
-CXX_FLAGS = -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -fdata-sections -ffunction-sections -g -fno-exceptions -fno-rtti -std=gnu++17
+CXX_FLAGS = -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -fdata-sections -ffunction-sections -g -fstack-usage -fno-exceptions -fno-rtti -std=gnu++17
 

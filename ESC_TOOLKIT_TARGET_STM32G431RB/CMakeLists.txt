@@ -27,6 +27,7 @@ set(COMMON_CFLAGS
     -fdata-sections
     -ffunction-sections
     -g
+    -fstack-usage
 )
 string(REPLACE ";" " " COMMON_CFLAGS_STR "${COMMON_CFLAGS}")
 set(CMAKE_C_FLAGS "${COMMON_CFLAGS_STR} -std=gnu11" CACHE STRING "C compiler flags" FORCE)
