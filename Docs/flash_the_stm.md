@@ -1,12 +1,16 @@
 # Flash the STM
 
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -g3 -ffunction-sections -fdata-sections --specs=nosys.specs main.cpp
+Connect using OpenOCD
+```bash
+openocd -f interface/stlink.cfg -f target/stm32g4x.cfg -c 'adapter speed 100'
+```
 
-
-openocd -f interface/stlink.cfg -f target/stm32g4x.cfg
-
-
-arm-none-eabi-gdb     or     arm-none-eabi-gdb a.out (directly)
+Flash the STM
+```bash
+arm-none-eabi-gdb
+#OR
+arm-none-eabi-gdb a.out (directly)
+```
 
 
 

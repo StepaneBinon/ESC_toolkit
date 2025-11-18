@@ -109,7 +109,8 @@ add_custom_command(
     TARGET ${PROJECT_NAME}.elf POST_BUILD
     COMMAND ${CMAKE_OBJCOPY} -O ihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${PROJECT_NAME}.hex
     COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:${PROJECT_NAME}.elf> ${PROJECT_NAME}.bin
-    COMMAND bash ${CMAKE_SOURCE_DIR}/memory_report.sh $<TARGET_FILE:${PROJECT_NAME}.elf>
+    # COMMAND bash ${CMAKE_SOURCE_DIR}/memory_report.sh $<TARGET_FILE:${PROJECT_NAME}.elf>
+    COMMAND bash ${CMAKE_SOURCE_DIR}/memory_report.sh $<TARGET_FILE:${PROJECT_NAME}.elf> horizontal
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Build complete"
 )
