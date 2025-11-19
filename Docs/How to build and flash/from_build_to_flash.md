@@ -84,6 +84,7 @@ Then connect to the debuger loader via GDB, the full list of command can be find
 ```bash
 # First, start with a given link file
 gdb-multiarch ESC_TOOLKIT_TARGET_STM32G431RB.elf
+arm-none-eabi-gdb ESC_TOOLKIT_TARGET_STM32G431RB.elf # For windows
 # Then connect to the remote
 target remote localhost:3333
 # Halt just after reset ensure that the program counter is set to the reset vector and that the CPU is stopped before any application can be executed
@@ -92,9 +93,21 @@ monitor reset halt
 load
 # And then continue
 continue
+```
 
+So advanced GDB functions
+```bash
 # To change file or load it after the GDB call
 file ESC_TOOLKIT_TARGET_STM32G431RB.elf
+# To print the memory location of a variable
+print &var_a
+# To get info on local variables
+info locals
+display 
+watch
+# With monitor
+# Show all register
+monitor reg
 ```
 
 

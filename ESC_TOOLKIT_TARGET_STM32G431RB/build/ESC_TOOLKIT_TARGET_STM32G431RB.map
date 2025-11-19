@@ -522,142 +522,142 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
                 0x0000000008000000                g_pfnVectors
                 0x00000000080001d8                . = ALIGN (0x4)
 
-.text           0x00000000080001d8       0xec
+.text           0x00000000080001d8      0x108
                 0x00000000080001d8                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080001d8       0x48 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
                 0x00000000080001d8                __libc_init_array
  *(.text*)
- .text.main     0x0000000008000220       0x14 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .text.main     0x0000000008000220       0x30 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
                 0x0000000008000220                main
  .text.SystemInit
-                0x0000000008000234       0x24 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
-                0x0000000008000234                SystemInit
+                0x0000000008000250       0x24 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+                0x0000000008000250                SystemInit
  .text.Reset_Handler
-                0x0000000008000258       0x50 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
-                0x0000000008000258                Reset_Handler
+                0x0000000008000274       0x50 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+                0x0000000008000274                Reset_Handler
  .text.Default_Handler
-                0x00000000080002a8        0x2 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
-                0x00000000080002a8                RTC_Alarm_IRQHandler
-                0x00000000080002a8                EXTI2_IRQHandler
-                0x00000000080002a8                TIM8_TRG_COM_IRQHandler
-                0x00000000080002a8                TIM8_CC_IRQHandler
-                0x00000000080002a8                DebugMon_Handler
-                0x00000000080002a8                TIM1_CC_IRQHandler
-                0x00000000080002a8                HardFault_Handler
-                0x00000000080002a8                USB_HP_IRQHandler
-                0x00000000080002a8                CORDIC_IRQHandler
-                0x00000000080002a8                SysTick_Handler
-                0x00000000080002a8                PendSV_Handler
-                0x00000000080002a8                NMI_Handler
-                0x00000000080002a8                EXTI3_IRQHandler
-                0x00000000080002a8                I2C3_ER_IRQHandler
-                0x00000000080002a8                EXTI0_IRQHandler
-                0x00000000080002a8                I2C2_EV_IRQHandler
-                0x00000000080002a8                FPU_IRQHandler
-                0x00000000080002a8                FDCAN1_IT1_IRQHandler
-                0x00000000080002a8                TIM1_UP_TIM16_IRQHandler
-                0x00000000080002a8                UsageFault_Handler
-                0x00000000080002a8                ADC1_2_IRQHandler
-                0x00000000080002a8                SPI1_IRQHandler
-                0x00000000080002a8                TIM6_DAC_IRQHandler
-                0x00000000080002a8                TIM8_UP_IRQHandler
-                0x00000000080002a8                DMA2_Channel2_IRQHandler
-                0x00000000080002a8                DMA1_Channel4_IRQHandler
-                0x00000000080002a8                USART3_IRQHandler
-                0x00000000080002a8                TIM4_IRQHandler
-                0x00000000080002a8                DMA2_Channel1_IRQHandler
-                0x00000000080002a8                I2C1_EV_IRQHandler
-                0x00000000080002a8                DMA1_Channel6_IRQHandler
-                0x00000000080002a8                UART4_IRQHandler
-                0x00000000080002a8                DMA2_Channel4_IRQHandler
-                0x00000000080002a8                TIM3_IRQHandler
-                0x00000000080002a8                RCC_IRQHandler
-                0x00000000080002a8                DMA1_Channel1_IRQHandler
-                0x00000000080002a8                Default_Handler
-                0x00000000080002a8                RTC_TAMP_LSECSS_IRQHandler
-                0x00000000080002a8                FMAC_IRQHandler
-                0x00000000080002a8                EXTI15_10_IRQHandler
-                0x00000000080002a8                TIM7_IRQHandler
-                0x00000000080002a8                UCPD1_IRQHandler
-                0x00000000080002a8                I2C3_EV_IRQHandler
-                0x00000000080002a8                EXTI9_5_IRQHandler
-                0x00000000080002a8                RTC_WKUP_IRQHandler
-                0x00000000080002a8                PVD_PVM_IRQHandler
-                0x00000000080002a8                SPI2_IRQHandler
-                0x00000000080002a8                MemManage_Handler
-                0x00000000080002a8                SVC_Handler
-                0x00000000080002a8                DMA2_Channel5_IRQHandler
-                0x00000000080002a8                CRS_IRQHandler
-                0x00000000080002a8                DMA1_Channel5_IRQHandler
-                0x00000000080002a8                USB_LP_IRQHandler
-                0x00000000080002a8                EXTI4_IRQHandler
-                0x00000000080002a8                RNG_IRQHandler
-                0x00000000080002a8                TIM1_TRG_COM_TIM17_IRQHandler
-                0x00000000080002a8                DMA1_Channel3_IRQHandler
-                0x00000000080002a8                WWDG_IRQHandler
-                0x00000000080002a8                LPUART1_IRQHandler
-                0x00000000080002a8                DMA2_Channel6_IRQHandler
-                0x00000000080002a8                FDCAN1_IT0_IRQHandler
-                0x00000000080002a8                TIM2_IRQHandler
-                0x00000000080002a8                COMP1_2_3_IRQHandler
-                0x00000000080002a8                EXTI1_IRQHandler
-                0x00000000080002a8                USART2_IRQHandler
-                0x00000000080002a8                I2C2_ER_IRQHandler
-                0x00000000080002a8                DMA1_Channel2_IRQHandler
-                0x00000000080002a8                TIM8_BRK_IRQHandler
-                0x00000000080002a8                FLASH_IRQHandler
-                0x00000000080002a8                BusFault_Handler
-                0x00000000080002a8                USART1_IRQHandler
-                0x00000000080002a8                SPI3_IRQHandler
-                0x00000000080002a8                I2C1_ER_IRQHandler
-                0x00000000080002a8                LPTIM1_IRQHandler
-                0x00000000080002a8                DMAMUX_OVR_IRQHandler
-                0x00000000080002a8                USBWakeUp_IRQHandler
-                0x00000000080002a8                SAI1_IRQHandler
-                0x00000000080002a8                DMA2_Channel3_IRQHandler
-                0x00000000080002a8                COMP4_IRQHandler
-                0x00000000080002a8                TIM1_BRK_TIM15_IRQHandler
+                0x00000000080002c4        0x2 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+                0x00000000080002c4                RTC_Alarm_IRQHandler
+                0x00000000080002c4                EXTI2_IRQHandler
+                0x00000000080002c4                TIM8_TRG_COM_IRQHandler
+                0x00000000080002c4                TIM8_CC_IRQHandler
+                0x00000000080002c4                DebugMon_Handler
+                0x00000000080002c4                TIM1_CC_IRQHandler
+                0x00000000080002c4                HardFault_Handler
+                0x00000000080002c4                USB_HP_IRQHandler
+                0x00000000080002c4                CORDIC_IRQHandler
+                0x00000000080002c4                SysTick_Handler
+                0x00000000080002c4                PendSV_Handler
+                0x00000000080002c4                NMI_Handler
+                0x00000000080002c4                EXTI3_IRQHandler
+                0x00000000080002c4                I2C3_ER_IRQHandler
+                0x00000000080002c4                EXTI0_IRQHandler
+                0x00000000080002c4                I2C2_EV_IRQHandler
+                0x00000000080002c4                FPU_IRQHandler
+                0x00000000080002c4                FDCAN1_IT1_IRQHandler
+                0x00000000080002c4                TIM1_UP_TIM16_IRQHandler
+                0x00000000080002c4                UsageFault_Handler
+                0x00000000080002c4                ADC1_2_IRQHandler
+                0x00000000080002c4                SPI1_IRQHandler
+                0x00000000080002c4                TIM6_DAC_IRQHandler
+                0x00000000080002c4                TIM8_UP_IRQHandler
+                0x00000000080002c4                DMA2_Channel2_IRQHandler
+                0x00000000080002c4                DMA1_Channel4_IRQHandler
+                0x00000000080002c4                USART3_IRQHandler
+                0x00000000080002c4                TIM4_IRQHandler
+                0x00000000080002c4                DMA2_Channel1_IRQHandler
+                0x00000000080002c4                I2C1_EV_IRQHandler
+                0x00000000080002c4                DMA1_Channel6_IRQHandler
+                0x00000000080002c4                UART4_IRQHandler
+                0x00000000080002c4                DMA2_Channel4_IRQHandler
+                0x00000000080002c4                TIM3_IRQHandler
+                0x00000000080002c4                RCC_IRQHandler
+                0x00000000080002c4                DMA1_Channel1_IRQHandler
+                0x00000000080002c4                Default_Handler
+                0x00000000080002c4                RTC_TAMP_LSECSS_IRQHandler
+                0x00000000080002c4                FMAC_IRQHandler
+                0x00000000080002c4                EXTI15_10_IRQHandler
+                0x00000000080002c4                TIM7_IRQHandler
+                0x00000000080002c4                UCPD1_IRQHandler
+                0x00000000080002c4                I2C3_EV_IRQHandler
+                0x00000000080002c4                EXTI9_5_IRQHandler
+                0x00000000080002c4                RTC_WKUP_IRQHandler
+                0x00000000080002c4                PVD_PVM_IRQHandler
+                0x00000000080002c4                SPI2_IRQHandler
+                0x00000000080002c4                MemManage_Handler
+                0x00000000080002c4                SVC_Handler
+                0x00000000080002c4                DMA2_Channel5_IRQHandler
+                0x00000000080002c4                CRS_IRQHandler
+                0x00000000080002c4                DMA1_Channel5_IRQHandler
+                0x00000000080002c4                USB_LP_IRQHandler
+                0x00000000080002c4                EXTI4_IRQHandler
+                0x00000000080002c4                RNG_IRQHandler
+                0x00000000080002c4                TIM1_TRG_COM_TIM17_IRQHandler
+                0x00000000080002c4                DMA1_Channel3_IRQHandler
+                0x00000000080002c4                WWDG_IRQHandler
+                0x00000000080002c4                LPUART1_IRQHandler
+                0x00000000080002c4                DMA2_Channel6_IRQHandler
+                0x00000000080002c4                FDCAN1_IT0_IRQHandler
+                0x00000000080002c4                TIM2_IRQHandler
+                0x00000000080002c4                COMP1_2_3_IRQHandler
+                0x00000000080002c4                EXTI1_IRQHandler
+                0x00000000080002c4                USART2_IRQHandler
+                0x00000000080002c4                I2C2_ER_IRQHandler
+                0x00000000080002c4                DMA1_Channel2_IRQHandler
+                0x00000000080002c4                TIM8_BRK_IRQHandler
+                0x00000000080002c4                FLASH_IRQHandler
+                0x00000000080002c4                BusFault_Handler
+                0x00000000080002c4                USART1_IRQHandler
+                0x00000000080002c4                SPI3_IRQHandler
+                0x00000000080002c4                I2C1_ER_IRQHandler
+                0x00000000080002c4                LPTIM1_IRQHandler
+                0x00000000080002c4                DMAMUX_OVR_IRQHandler
+                0x00000000080002c4                USBWakeUp_IRQHandler
+                0x00000000080002c4                SAI1_IRQHandler
+                0x00000000080002c4                DMA2_Channel3_IRQHandler
+                0x00000000080002c4                COMP4_IRQHandler
+                0x00000000080002c4                TIM1_BRK_TIM15_IRQHandler
  *(.glue_7)
- .glue_7        0x00000000080002aa        0x0 linker stubs
+ .glue_7        0x00000000080002c6        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000000080002aa        0x0 linker stubs
+ .glue_7t       0x00000000080002c6        0x0 linker stubs
  *(.eh_frame)
  *(.init)
- *fill*         0x00000000080002aa        0x2 
- .init          0x00000000080002ac        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x00000000080002ac                _init
- .init          0x00000000080002b0        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+ *fill*         0x00000000080002c6        0x2 
+ .init          0x00000000080002c8        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x00000000080002c8                _init
+ .init          0x00000000080002cc        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x00000000080002b8        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x00000000080002b8                _fini
- .fini          0x00000000080002bc        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x00000000080002c4                . = ALIGN (0x4)
+ .fini          0x00000000080002d4        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x00000000080002d4                _fini
+ .fini          0x00000000080002d8        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x00000000080002e0                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x00000000080002c4                . = ALIGN (0x4)
-                0x00000000080002c4                _etext = .
+                0x00000000080002e0                . = ALIGN (0x4)
+                0x00000000080002e0                _etext = .
 
-.vfp11_veneer   0x00000000080002c4        0x0
- .vfp11_veneer  0x00000000080002c4        0x0 linker stubs
+.vfp11_veneer   0x00000000080002e0        0x0
+ .vfp11_veneer  0x00000000080002e0        0x0 linker stubs
 
-.v4_bx          0x00000000080002c4        0x0
- .v4_bx         0x00000000080002c4        0x0 linker stubs
+.v4_bx          0x00000000080002e0        0x0
+ .v4_bx         0x00000000080002e0        0x0 linker stubs
 
-.iplt           0x00000000080002c4        0x0
- .iplt          0x00000000080002c4        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+.iplt           0x00000000080002e0        0x0
+ .iplt          0x00000000080002e0        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
 
-.rel.dyn        0x00000000080002c4        0x0
- .rel.iplt      0x00000000080002c4        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+.rel.dyn        0x00000000080002e0        0x0
+ .rel.iplt      0x00000000080002e0        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000000080002c4                _sidata = LOADADDR (.data)
+                0x00000000080002e0                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000        0x0 load address 0x00000000080002c4
+.data           0x0000000020000000        0x0 load address 0x00000000080002e0
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -665,35 +665,39 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _edata = .
 
-.igot.plt       0x0000000020000000        0x0 load address 0x00000000080002c4
+.igot.plt       0x0000000020000000        0x0 load address 0x00000000080002e0
  .igot.plt      0x0000000020000000        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
 
-.bss            0x0000000020000000        0x4 load address 0x00000000080002c4
+.bss            0x0000000020000000        0xc load address 0x00000000080002e0
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sbss = .
  *(.bss)
  *(.bss*)
- .bss._ZZ4mainE3cnt
+ .bss._ZZ4mainE5var_a
                 0x0000000020000000        0x4 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .bss._ZZ4mainE5var_b
+                0x0000000020000004        0x4 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .bss._ZZ4mainE5var_c
+                0x0000000020000008        0x4 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
  *(COMMON)
-                0x0000000020000004                . = ALIGN (0x4)
-                0x0000000020000004                _ebss = .
+                0x000000002000000c                . = ALIGN (0x4)
+                0x000000002000000c                _ebss = .
 
 ._user_heap_stack
-                0x0000000020000004      0xc04 load address 0x00000000080002c4
-                0x0000000020000008                . = ALIGN (0x8)
- *fill*         0x0000000020000004        0x4 
+                0x000000002000000c      0xc04 load address 0x00000000080002e0
+                0x0000000020000010                . = ALIGN (0x8)
+ *fill*         0x000000002000000c        0x4 
                 [!provide]                        PROVIDE (end = .)
-                0x0000000020000008                PROVIDE (_end = .)
+                0x0000000020000010                PROVIDE (_end = .)
                 [!provide]                        PROVIDE (_heap_start = .)
-                0x0000000020000408                . = (. + 0x400)
- *fill*         0x0000000020000008      0x400 
+                0x0000000020000410                . = (. + 0x400)
+ *fill*         0x0000000020000010      0x400 
                 [!provide]                        PROVIDE (_heap_end = .)
                 [!provide]                        PROVIDE (_stack_start = .)
-                0x0000000020000c08                . = (. + 0x800)
- *fill*         0x0000000020000408      0x800 
+                0x0000000020000c10                . = (. + 0x800)
+ *fill*         0x0000000020000410      0x800 
                 [!provide]                        PROVIDE (_stack_end = .)
-                0x0000000020000c08                . = ALIGN (0x8)
+                0x0000000020000c10                . = ALIGN (0x8)
 OUTPUT(ESC_TOOLKIT_TARGET_STM32G431RB.elf elf32-littlearm)
 LOAD linker stubs
 
@@ -718,11 +722,11 @@ LOAD linker stubs
  .comment       0x0000000000000033       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
 
-.debug_info     0x0000000000000000      0x760
- .debug_info    0x0000000000000000       0xa1 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
- .debug_info    0x00000000000000a1      0x583 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
- .debug_info    0x0000000000000624       0x22 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
- .debug_info    0x0000000000000646      0x11a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+.debug_info     0x0000000000000000      0x784
+ .debug_info    0x0000000000000000       0xc5 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .debug_info    0x00000000000000c5      0x583 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+ .debug_info    0x0000000000000648       0x22 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+ .debug_info    0x000000000000066a      0x11a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
 
 .debug_abbrev   0x0000000000000000      0x255
  .debug_abbrev  0x0000000000000000       0x64 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
@@ -745,20 +749,20 @@ LOAD linker stubs
  .debug_ranges  0x0000000000000010       0x18 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
  .debug_ranges  0x0000000000000028       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
 
-.debug_line     0x0000000000000000      0x53e
- .debug_line    0x0000000000000000       0xb2 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
- .debug_line    0x00000000000000b2      0x264 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
- .debug_line    0x0000000000000316       0xf0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
- .debug_line    0x0000000000000406      0x138 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+.debug_line     0x0000000000000000      0x55f
+ .debug_line    0x0000000000000000       0xd3 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .debug_line    0x00000000000000d3      0x264 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+ .debug_line    0x0000000000000337       0xf0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+ .debug_line    0x0000000000000427      0x138 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
 
-.debug_str      0x0000000000000000      0x70d
- .debug_str     0x0000000000000000      0x1a7 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
-                                        0x1db (size before relaxing)
- .debug_str     0x00000000000001a7      0x355 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+.debug_str      0x0000000000000000      0x71f
+ .debug_str     0x0000000000000000      0x1b9 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+                                        0x1ed (size before relaxing)
+ .debug_str     0x00000000000001b9      0x355 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
                                         0x423 (size before relaxing)
- .debug_str     0x00000000000004fc       0x9b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+ .debug_str     0x000000000000050e       0x9b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
                                          0xd7 (size before relaxing)
- .debug_str     0x0000000000000597      0x176 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_str     0x00000000000005a9      0x176 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
                                         0x20b (size before relaxing)
 
 .debug_frame    0x0000000000000000       0xac
