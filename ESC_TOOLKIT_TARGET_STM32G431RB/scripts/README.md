@@ -7,6 +7,7 @@ A modular bash script system for analyzing STM32 embedded firmware memory usage,
 This system provides comprehensive analysis of:
 - **FLASH Memory**: Usage breakdown, vector table, code sections
 - **RAM Memory**: Data/BSS/Heap/Stack allocation with address mapping
+- **Memory Layout**: Detailed symbol-level layout with parameters and functions
 - **Stack Analysis**: Usage tracking, top consumers, warning thresholds
 - **Code Metrics**: Lines of code (LOC, SLOC, ELOC), function counts
 - **Code Analysis**: Interrupt vectors, linker optimizations, dead code detection
@@ -24,7 +25,8 @@ scripts/
 │   ├── ram_collector.sh          # RAM calculations
 │   ├── stack_collector.sh        # Stack usage analysis
 │   ├── code_metrics_collector.sh # LOC/SLOC/ELOC metrics
-│   └── code_analysis_collector.sh # Vectors, functions, GC stats
+│   ├── code_analysis_collector.sh # Vectors, functions, GC stats
+│   └── memory_layout_collector.sh # Detailed symbol layout
 ├── analyzers/                    # Data analysis modules
 │   ├── build_delta.sh            # Build-to-build tracking
 │   └── stack_analyzer.sh         # Stack warnings
@@ -33,7 +35,8 @@ scripts/
 │   ├── flash_box.sh              # FLASH visualization
 │   ├── ram_box.sh                # RAM visualization
 │   ├── metrics_box.sh            # Code metrics display
-│   └── analysis_box.sh           # Code analysis display
+│   ├── analysis_box.sh           # Code analysis display
+│   └── memory_layout_box.sh      # Detailed memory layout
 ├── utils/                        # Helper utilities
 │   ├── formatters.sh             # Number/delta formatting
 │   └── layout.sh                 # Horizontal/vertical layout
@@ -111,8 +114,15 @@ BOX_WIDTH=60            # ASCII box width
 
 ### Build System
 - GCC with `-fstack-usage` flag enabled (generates .su files)
-- Linker map file generation enabled
+- Linker map file generation enabled (for detailed memory layout)
 - Linker script with `_heap_start` and `_stack_start` symbols
+
+To enable map file generation in CMakeLists.txt:
+```cmake
+target_link_options(${PROJECT_NAME}.elf PRIVATE
+    -Wl,-Map=${PROJECT_NAME}.map
+)
+```
 
 ## Features
 
@@ -152,6 +162,15 @@ BOX_WIDTH=60            # ASCII box width
 - Linker garbage collection effectiveness
 - Dead code detection
 
+### Memory Layout (NEW)
+- **Complete memory map** with exact addresses
+- **FLASH layout**: Vector table, code sections, top functions by size
+- **RAM layout**: .data and .bss variables with addresses and sizes
+- **Symbol-level detail**: Shows individual parameters and variables
+- **Top consumers**: Largest functions and variables in each section
+- **Integrated view**: Heap and stack boundaries with actual usage
+- Requires linker map file (`.map`) for full symbol information
+
 ### Build Tracking
 - Maintains `.build_history` file
 - Tracks FLASH and RAM usage per build
@@ -181,6 +200,51 @@ BOX_WIDTH=60            # ASCII box width
 
 ### Horizontal Layout
 Displays all four boxes side-by-side (requires 250+ char terminal).
+
+### Memory Layout Box Example
+```
+┌──────────────────────────────────────────────────────────┐
+│              DETAILED MEMORY LAYOUT                      │
+├──────────────────────────────────────────────────────────┤
+│ FLASH MEMORY (0x08000000 - 0x0801FFFF)                │
+├──────────────────────────────────────────────────────────┤
+│ ┌─ 0x08000000  Vector Table (512 bytes)              │
+│ │                                                          │
+│ ├─ 0x08000200  .text (Code Section)                   │
+│ │  Top Functions by Size:                                │
+│ │   0x08001234  main                         1024 B │
+│ │   0x08001634  ProcessData                   856 B │
+│ │   0x08001934  HandleInterrupt               512 B │
+│ │                                                          │
+│ ├─ 0x08003039  .rodata (Constants)                    │
+│ │  (Read-only data included in .text)                     │
+│ └─ 0x08003039  End of used FLASH                      │
+├──────────────────────────────────────────────────────────┤
+│ RAM MEMORY (0x20000000 - 0x20008000)                  │
+├──────────────────────────────────────────────────────────┤
+│ ┌─ 0x20000000  .data (Initialized Data)               │
+│ │  Initialized Variables:                                │
+│ │   0x20000000  systemConfig                 256 B │
+│ │   0x20000100  dataBuffer                   128 B │
+│ ├─ 0x20000180  .bss (Zero-initialized Data)           │
+│ │  Zero-init Variables:                                  │
+│ │   0x20000180  tempArray                    512 B │
+│ │   0x20000380  statusFlags                   64 B │
+│ ├─ 0x200003C0  HEAP (Dynamic Allocation)              │
+│ │  Size: 4096 bytes, Malloc calls: 3                     │
+│ ├─ 0x200013C0  STACK (Grows Downward)                 │
+│ │  Size: 2048 bytes, Used: 512 bytes (25%)                │
+│ │  Stack Consumers:                                      │
+│ │   ProcessData                        256 B │
+│ └─ 0x20008000  End of RAM                             │
+├──────────────────────────────────────────────────────────┤
+│ Summary:                                                 │
+│  Total RAM sections: .data(5) + .bss(8) + heap + stack  │
+│  Map file: available                                     │
+└──────────────────────────────────────────────────────────┘
+```
+
+**Note**: The memory layout box requires a linker map file (`.map`) to display detailed symbol information. Without it, the box will still show memory regions but with limited variable details.
 
 ## Extending the System
 

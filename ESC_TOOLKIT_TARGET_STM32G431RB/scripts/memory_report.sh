@@ -41,6 +41,7 @@ source "$SCRIPT_DIR/collectors/ram_collector.sh"
 source "$SCRIPT_DIR/collectors/stack_collector.sh"
 source "$SCRIPT_DIR/collectors/code_metrics_collector.sh"
 source "$SCRIPT_DIR/collectors/code_analysis_collector.sh"
+source "$SCRIPT_DIR/collectors/memory_layout_collector.sh"
 
 # Analyzers
 source "$SCRIPT_DIR/analyzers/build_delta.sh"
@@ -52,6 +53,7 @@ source "$SCRIPT_DIR/renderers/flash_box.sh"
 source "$SCRIPT_DIR/renderers/ram_box.sh"
 source "$SCRIPT_DIR/renderers/metrics_box.sh"
 source "$SCRIPT_DIR/renderers/analysis_box.sh"
+source "$SCRIPT_DIR/renderers/memory_layout_box.sh"
 
 # Utils
 source "$SCRIPT_DIR/utils/formatters.sh"
@@ -68,6 +70,7 @@ collect_ram_data
 collect_stack_data
 collect_code_metrics
 collect_code_analysis "$ELF_FILE"
+collect_memory_layout "$ELF_FILE"
 
 # ============================================================================
 # ANALYSIS PHASE
@@ -84,7 +87,11 @@ save_current_build
 if [ "$LAYOUT" = "horizontal" ]; then
     # All boxes side by side (requires ~250 char wide terminal for 4 boxes)
     concat_horizontal generate_flash_box generate_ram_box generate_code_metrics_box generate_code_analysis_box
+    echo ""
+    echo ""
+    # Memory layout box shown separately due to its detail
+    generate_memory_layout_box
 else
     # All vertical (default)
-    concat_vertical generate_flash_box generate_ram_box generate_code_metrics_box generate_code_analysis_box
+    concat_vertical generate_flash_box generate_ram_box generate_code_metrics_box generate_code_analysis_box generate_memory_layout_box
 fi
