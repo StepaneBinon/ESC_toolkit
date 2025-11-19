@@ -4,7 +4,7 @@ OpenOCD (Open On Chip Debuger - doc [1]) is used to get low to none overhead deb
 
 To connect the server to the chip, once plugged into the computer
 ```bash
-openocd -f interface/stlink.cfg -f target/stm32g4x.cfg
+openocd -f interface/stlink.cfg -f target/stm32g4x.cfg -c 'adapter speed 100'
 ```
 You should have ![alt text](.\Images\OpenOCD\connect_result.png)
 

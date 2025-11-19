@@ -68,13 +68,19 @@ Install tarball in WSL and extract it
 
 And GDB seems to need `sudo apt install libncurses5` to work.
 
+Install `arm-none-eabi-gdb`
+```bash
+sudo apt install gdb-multiarch
+# Then arm-none-eabi-gdb is called by gdb-multiarch on Linux
+```
+
 ## Install the HAL/RTOS
 
 ### --------- RTOS: NuttX
 
 https://nuttx.apache.org/docs/latest/quickstart/index.html
 
-Create a /nuttxspace/ and clone inside
+Create a `/nuttxspace/` and clone inside
 ```bash
 git clone https://github.com/apache/nuttx.git nuttx
 git clone https://github.com/apache/nuttx-apps apps

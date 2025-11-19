@@ -54,15 +54,47 @@ In `0: b480   push {r7}`, `0:` is the adress of the instruction inside the secti
 
 ## The linking
 
-Refer to the minimal linker script.
+Refer to `minimal_linker.ld` script and the `CMakeLists.txt`, to get all linking step and build tags.
 You can build the whole system using:
 ```bash
-arm-none-eabi-g++ \
-  -mcpu=cortex-m4 -mthumb \
-  -std=c++17 -O0 -g \
-  -ffreestanding -nostdlib \
-  -T linker_minimal.ld \
-  /home/step/ESC_toolkit/TARGET/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s \
-  main.cpp \
-  -Wl,--gc-sections -o firmware.elf
+cd build
+rm -rf *
+cmake ..
+make
+# Or the on liner !!! BE SURE TO BE ON BUILD TO NOT ERASE EVERYTHING
+rm -rf * && cmake .. && make
 ```
+
+You should see the debug metric plotted. 
+![alt text](image-1.png)
+To change from horizontal, go in the `CMakeLists.txt` file and look for
+```bash
+# COMMAND bash ${CMAKE_SOURCE_DIR}/memory_report.sh $<TARGET_FILE:${PROJECT_NAME}.elf>
+COMMAND bash ${CMAKE_SOURCE_DIR}/memory_report.sh $<TARGET_FILE:${PROJECT_NAME}.elf> horizontal
+```
+
+## The flashing
+
+First activate OpenOCD client on the computer by connecting to the server on the STM
+```bash
+openocd -f interface/stlink.cfg -f target/stm32g4x.cfg -c 'adapter speed 100'
+```
+
+Then connect to the debuger loader via GDB, the full list of command can be find in the pdf
+```bash
+# First, start with a given link file
+gdb-multiarch ESC_TOOLKIT_TARGET_STM32G431RB.elf
+# Then connect to the remote
+target remote localhost:3333
+# Halt just after reset ensure that the program counter is set to the reset vector and that the CPU is stopped before any application can be executed
+monitor reset halt 
+# And load the application 
+load
+# And then continue
+continue
+
+# To change file or load it after the GDB call
+file ESC_TOOLKIT_TARGET_STM32G431RB.elf
+```
+
+
