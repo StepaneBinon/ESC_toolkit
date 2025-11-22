@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o.d"
   "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o"
   "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o.d"
+  "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o"
+  "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o.d"
   "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o"
   "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o.d"
   "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o"

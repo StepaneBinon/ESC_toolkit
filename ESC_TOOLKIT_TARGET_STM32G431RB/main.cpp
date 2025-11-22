@@ -35,7 +35,7 @@ void SystemClock_Config(void)
 
     /** Configure the main internal regulator output voltage
      */
-    // HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1_BOOST);
+    HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1_BOOST);
 
     /** Initializes the RCC Oscillators according to the specified parameters
      * in the RCC_OscInitTypeDef structure.
@@ -52,7 +52,7 @@ void SystemClock_Config(void)
     RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
     if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
     {
-        // Error_Handler();
+        Error_Handler();
     }
 
     /** Initializes the CPU, AHB and APB buses clocks
@@ -66,7 +66,7 @@ void SystemClock_Config(void)
 
     if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
     {
-        // Error_Handler();
+        Error_Handler();
     }
 }
 
@@ -84,4 +84,16 @@ void GPIO_Init(void)
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     
     HAL_GPIO_Init(LED_PORT, &GPIO_InitStruct);
+}
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  __disable_irq();
+  while (1)
+  {
+  }
 }

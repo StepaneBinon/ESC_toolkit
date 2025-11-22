@@ -180,6 +180,20 @@ CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.s"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c -o CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.s
 
+CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/flags.make
+CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o: ../STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c
+CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o -MF CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o.d -o CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o -c /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c
+
+CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.i"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c > CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.i
+
+CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.s"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c -o CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.s
+
 # Object files for target ESC_TOOLKIT_TARGET_STM32G431RB.elf
 ESC_TOOLKIT_TARGET_STM32G431RB_elf_OBJECTS = \
 "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o" \
@@ -189,7 +203,8 @@ ESC_TOOLKIT_TARGET_STM32G431RB_elf_OBJECTS = \
 "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o" \
 "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o" \
 "CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o" \
-"CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o"
+"CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o" \
+"CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o"
 
 # External object files for target ESC_TOOLKIT_TARGET_STM32G431RB.elf
 ESC_TOOLKIT_TARGET_STM32G431RB_elf_EXTERNAL_OBJECTS =
@@ -202,9 +217,10 @@ ESC_TOOLKIT_TARGET_STM32G431RB.elf: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.el
 ESC_TOOLKIT_TARGET_STM32G431RB.elf: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
 ESC_TOOLKIT_TARGET_STM32G431RB.elf: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
 ESC_TOOLKIT_TARGET_STM32G431RB.elf: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ESC_TOOLKIT_TARGET_STM32G431RB.elf: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
 ESC_TOOLKIT_TARGET_STM32G431RB.elf: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/build.make
 ESC_TOOLKIT_TARGET_STM32G431RB.elf: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ESC_TOOLKIT_TARGET_STM32G431RB.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ESC_TOOLKIT_TARGET_STM32G431RB.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Build complete"
 	arm-none-eabi-objcopy -O ihex /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/ESC_TOOLKIT_TARGET_STM32G431RB.elf ESC_TOOLKIT_TARGET_STM32G431RB.hex

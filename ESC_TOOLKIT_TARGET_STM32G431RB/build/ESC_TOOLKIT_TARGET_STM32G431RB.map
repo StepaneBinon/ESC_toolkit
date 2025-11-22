@@ -256,6 +256,81 @@ Discarded input sections
                 0x0000000000000000       0x30 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
  .text.HAL_GPIO_EXTI_Callback
                 0x0000000000000000       0x16 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ .text          0x0000000000000000        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .data          0x0000000000000000        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .bss           0x0000000000000000        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_GetVoltageRange
+                0x0000000000000000       0x40 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnableBatteryCharging
+                0x0000000000000000       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisableBatteryCharging
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnableInternalWakeUpLine
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisableInternalWakeUpLine
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnableGPIOPullUp
+                0x0000000000000000      0x12c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisableGPIOPullUp
+                0x0000000000000000       0xd0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnableGPIOPullDown
+                0x0000000000000000      0x12c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisableGPIOPullDown
+                0x0000000000000000       0xc8 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnablePullUpPullDownConfig
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisablePullUpPullDownConfig
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnableSRAM2ContentRetention
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisableSRAM2ContentRetention
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnablePVM1
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisablePVM1
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnablePVM2
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisablePVM2
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnablePVM3
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisablePVM3
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnablePVM4
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisablePVM4
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_ConfigPVM
+                0x0000000000000000      0x2a4 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnableLowPowerRunMode
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisableLowPowerRunMode
+                0x0000000000000000       0x70 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnterSTOP0Mode
+                0x0000000000000000       0x54 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnterSTOP1Mode
+                0x0000000000000000       0x58 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnterSHUTDOWNMode
+                0x0000000000000000       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_PVD_PVM_IRQHandler
+                0x0000000000000000       0x7c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_PVM1Callback
+                0x0000000000000000        0xe CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_PVM2Callback
+                0x0000000000000000        0xe CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_PVM3Callback
+                0x0000000000000000        0xe CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_PVM4Callback
+                0x0000000000000000        0xe CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnableUCPDStandbyMode
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisableUCPDStandbyMode
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_EnableUCPDDeadBattery
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .text.HAL_PWREx_DisableUCPDDeadBattery
+                0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
  .text          0x0000000000000000        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atexit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atexit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-atexit.o)
@@ -391,6 +466,7 @@ LOAD CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32
 LOAD CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
 LOAD CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
 LOAD CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+LOAD CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
@@ -421,7 +497,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
                 0x0000000008000000                g_pfnVectors
                 0x00000000080001d8                . = ALIGN (0x4)
 
-.text           0x00000000080001d8     0x1270
+.text           0x00000000080001d8     0x13ec
                 0x00000000080001d8                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080001d8       0x48 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
@@ -432,191 +508,199 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
  .text.main     0x00000000080002c4       0x48 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
                 0x00000000080002c4                main
  .text._Z18SystemClock_Configv
-                0x000000000800030c       0x84 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+                0x000000000800030c       0xaa CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
                 0x000000000800030c                SystemClock_Config()
+ *fill*         0x00000000080003b6        0x2 
  .text._Z9GPIO_Initv
-                0x0000000008000390       0x54 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
-                0x0000000008000390                GPIO_Init()
+                0x00000000080003b8       0x54 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+                0x00000000080003b8                GPIO_Init()
+ .text._Z13Error_Handlerv
+                0x000000000800040c        0xa CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+                0x000000000800040c                Error_Handler()
+ *fill*         0x0000000008000416        0x2 
  .text.SystemInit
-                0x00000000080003e4       0x24 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
-                0x00000000080003e4                SystemInit
+                0x0000000008000418       0x24 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+                0x0000000008000418                SystemInit
  .text.Reset_Handler
-                0x0000000008000408       0x50 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
-                0x0000000008000408                Reset_Handler
+                0x000000000800043c       0x50 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+                0x000000000800043c                Reset_Handler
  .text.Default_Handler
-                0x0000000008000458        0x2 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
-                0x0000000008000458                RTC_Alarm_IRQHandler
-                0x0000000008000458                EXTI2_IRQHandler
-                0x0000000008000458                TIM8_TRG_COM_IRQHandler
-                0x0000000008000458                TIM8_CC_IRQHandler
-                0x0000000008000458                DebugMon_Handler
-                0x0000000008000458                TIM1_CC_IRQHandler
-                0x0000000008000458                HardFault_Handler
-                0x0000000008000458                USB_HP_IRQHandler
-                0x0000000008000458                CORDIC_IRQHandler
-                0x0000000008000458                SysTick_Handler
-                0x0000000008000458                PendSV_Handler
-                0x0000000008000458                NMI_Handler
-                0x0000000008000458                EXTI3_IRQHandler
-                0x0000000008000458                I2C3_ER_IRQHandler
-                0x0000000008000458                EXTI0_IRQHandler
-                0x0000000008000458                I2C2_EV_IRQHandler
-                0x0000000008000458                FPU_IRQHandler
-                0x0000000008000458                FDCAN1_IT1_IRQHandler
-                0x0000000008000458                TIM1_UP_TIM16_IRQHandler
-                0x0000000008000458                UsageFault_Handler
-                0x0000000008000458                ADC1_2_IRQHandler
-                0x0000000008000458                SPI1_IRQHandler
-                0x0000000008000458                TIM6_DAC_IRQHandler
-                0x0000000008000458                TIM8_UP_IRQHandler
-                0x0000000008000458                DMA2_Channel2_IRQHandler
-                0x0000000008000458                DMA1_Channel4_IRQHandler
-                0x0000000008000458                USART3_IRQHandler
-                0x0000000008000458                TIM4_IRQHandler
-                0x0000000008000458                DMA2_Channel1_IRQHandler
-                0x0000000008000458                I2C1_EV_IRQHandler
-                0x0000000008000458                DMA1_Channel6_IRQHandler
-                0x0000000008000458                UART4_IRQHandler
-                0x0000000008000458                DMA2_Channel4_IRQHandler
-                0x0000000008000458                TIM3_IRQHandler
-                0x0000000008000458                RCC_IRQHandler
-                0x0000000008000458                DMA1_Channel1_IRQHandler
-                0x0000000008000458                Default_Handler
-                0x0000000008000458                RTC_TAMP_LSECSS_IRQHandler
-                0x0000000008000458                FMAC_IRQHandler
-                0x0000000008000458                EXTI15_10_IRQHandler
-                0x0000000008000458                TIM7_IRQHandler
-                0x0000000008000458                UCPD1_IRQHandler
-                0x0000000008000458                I2C3_EV_IRQHandler
-                0x0000000008000458                EXTI9_5_IRQHandler
-                0x0000000008000458                RTC_WKUP_IRQHandler
-                0x0000000008000458                PVD_PVM_IRQHandler
-                0x0000000008000458                SPI2_IRQHandler
-                0x0000000008000458                MemManage_Handler
-                0x0000000008000458                SVC_Handler
-                0x0000000008000458                DMA2_Channel5_IRQHandler
-                0x0000000008000458                CRS_IRQHandler
-                0x0000000008000458                DMA1_Channel5_IRQHandler
-                0x0000000008000458                USB_LP_IRQHandler
-                0x0000000008000458                EXTI4_IRQHandler
-                0x0000000008000458                RNG_IRQHandler
-                0x0000000008000458                TIM1_TRG_COM_TIM17_IRQHandler
-                0x0000000008000458                DMA1_Channel3_IRQHandler
-                0x0000000008000458                WWDG_IRQHandler
-                0x0000000008000458                LPUART1_IRQHandler
-                0x0000000008000458                DMA2_Channel6_IRQHandler
-                0x0000000008000458                FDCAN1_IT0_IRQHandler
-                0x0000000008000458                TIM2_IRQHandler
-                0x0000000008000458                COMP1_2_3_IRQHandler
-                0x0000000008000458                EXTI1_IRQHandler
-                0x0000000008000458                USART2_IRQHandler
-                0x0000000008000458                I2C2_ER_IRQHandler
-                0x0000000008000458                DMA1_Channel2_IRQHandler
-                0x0000000008000458                TIM8_BRK_IRQHandler
-                0x0000000008000458                FLASH_IRQHandler
-                0x0000000008000458                BusFault_Handler
-                0x0000000008000458                USART1_IRQHandler
-                0x0000000008000458                SPI3_IRQHandler
-                0x0000000008000458                I2C1_ER_IRQHandler
-                0x0000000008000458                LPTIM1_IRQHandler
-                0x0000000008000458                DMAMUX_OVR_IRQHandler
-                0x0000000008000458                USBWakeUp_IRQHandler
-                0x0000000008000458                SAI1_IRQHandler
-                0x0000000008000458                DMA2_Channel3_IRQHandler
-                0x0000000008000458                COMP4_IRQHandler
-                0x0000000008000458                TIM1_BRK_TIM15_IRQHandler
+                0x000000000800048c        0x2 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+                0x000000000800048c                RTC_Alarm_IRQHandler
+                0x000000000800048c                EXTI2_IRQHandler
+                0x000000000800048c                TIM8_TRG_COM_IRQHandler
+                0x000000000800048c                TIM8_CC_IRQHandler
+                0x000000000800048c                DebugMon_Handler
+                0x000000000800048c                TIM1_CC_IRQHandler
+                0x000000000800048c                HardFault_Handler
+                0x000000000800048c                USB_HP_IRQHandler
+                0x000000000800048c                CORDIC_IRQHandler
+                0x000000000800048c                SysTick_Handler
+                0x000000000800048c                PendSV_Handler
+                0x000000000800048c                NMI_Handler
+                0x000000000800048c                EXTI3_IRQHandler
+                0x000000000800048c                I2C3_ER_IRQHandler
+                0x000000000800048c                EXTI0_IRQHandler
+                0x000000000800048c                I2C2_EV_IRQHandler
+                0x000000000800048c                FPU_IRQHandler
+                0x000000000800048c                FDCAN1_IT1_IRQHandler
+                0x000000000800048c                TIM1_UP_TIM16_IRQHandler
+                0x000000000800048c                UsageFault_Handler
+                0x000000000800048c                ADC1_2_IRQHandler
+                0x000000000800048c                SPI1_IRQHandler
+                0x000000000800048c                TIM6_DAC_IRQHandler
+                0x000000000800048c                TIM8_UP_IRQHandler
+                0x000000000800048c                DMA2_Channel2_IRQHandler
+                0x000000000800048c                DMA1_Channel4_IRQHandler
+                0x000000000800048c                USART3_IRQHandler
+                0x000000000800048c                TIM4_IRQHandler
+                0x000000000800048c                DMA2_Channel1_IRQHandler
+                0x000000000800048c                I2C1_EV_IRQHandler
+                0x000000000800048c                DMA1_Channel6_IRQHandler
+                0x000000000800048c                UART4_IRQHandler
+                0x000000000800048c                DMA2_Channel4_IRQHandler
+                0x000000000800048c                TIM3_IRQHandler
+                0x000000000800048c                RCC_IRQHandler
+                0x000000000800048c                DMA1_Channel1_IRQHandler
+                0x000000000800048c                Default_Handler
+                0x000000000800048c                RTC_TAMP_LSECSS_IRQHandler
+                0x000000000800048c                FMAC_IRQHandler
+                0x000000000800048c                EXTI15_10_IRQHandler
+                0x000000000800048c                TIM7_IRQHandler
+                0x000000000800048c                UCPD1_IRQHandler
+                0x000000000800048c                I2C3_EV_IRQHandler
+                0x000000000800048c                EXTI9_5_IRQHandler
+                0x000000000800048c                RTC_WKUP_IRQHandler
+                0x000000000800048c                PVD_PVM_IRQHandler
+                0x000000000800048c                SPI2_IRQHandler
+                0x000000000800048c                MemManage_Handler
+                0x000000000800048c                SVC_Handler
+                0x000000000800048c                DMA2_Channel5_IRQHandler
+                0x000000000800048c                CRS_IRQHandler
+                0x000000000800048c                DMA1_Channel5_IRQHandler
+                0x000000000800048c                USB_LP_IRQHandler
+                0x000000000800048c                EXTI4_IRQHandler
+                0x000000000800048c                RNG_IRQHandler
+                0x000000000800048c                TIM1_TRG_COM_TIM17_IRQHandler
+                0x000000000800048c                DMA1_Channel3_IRQHandler
+                0x000000000800048c                WWDG_IRQHandler
+                0x000000000800048c                LPUART1_IRQHandler
+                0x000000000800048c                DMA2_Channel6_IRQHandler
+                0x000000000800048c                FDCAN1_IT0_IRQHandler
+                0x000000000800048c                TIM2_IRQHandler
+                0x000000000800048c                COMP1_2_3_IRQHandler
+                0x000000000800048c                EXTI1_IRQHandler
+                0x000000000800048c                USART2_IRQHandler
+                0x000000000800048c                I2C2_ER_IRQHandler
+                0x000000000800048c                DMA1_Channel2_IRQHandler
+                0x000000000800048c                TIM8_BRK_IRQHandler
+                0x000000000800048c                FLASH_IRQHandler
+                0x000000000800048c                BusFault_Handler
+                0x000000000800048c                USART1_IRQHandler
+                0x000000000800048c                SPI3_IRQHandler
+                0x000000000800048c                I2C1_ER_IRQHandler
+                0x000000000800048c                LPTIM1_IRQHandler
+                0x000000000800048c                DMAMUX_OVR_IRQHandler
+                0x000000000800048c                USBWakeUp_IRQHandler
+                0x000000000800048c                SAI1_IRQHandler
+                0x000000000800048c                DMA2_Channel3_IRQHandler
+                0x000000000800048c                COMP4_IRQHandler
+                0x000000000800048c                TIM1_BRK_TIM15_IRQHandler
  .text.HAL_Init
-                0x000000000800045a       0x30 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
-                0x000000000800045a                HAL_Init
+                0x000000000800048e       0x30 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+                0x000000000800048e                HAL_Init
  .text.HAL_MspInit
-                0x000000000800048a        0xe CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
-                0x000000000800048a                HAL_MspInit
+                0x00000000080004be        0xe CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+                0x00000000080004be                HAL_MspInit
  .text.HAL_InitTick
-                0x0000000008000498       0x74 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
-                0x0000000008000498                HAL_InitTick
+                0x00000000080004cc       0x74 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+                0x00000000080004cc                HAL_InitTick
  .text.HAL_GetTick
-                0x000000000800050c       0x18 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
-                0x000000000800050c                HAL_GetTick
+                0x0000000008000540       0x18 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+                0x0000000008000540                HAL_GetTick
  .text.HAL_RCC_OscConfig
-                0x0000000008000524      0x624 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
-                0x0000000008000524                HAL_RCC_OscConfig
+                0x0000000008000558      0x624 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+                0x0000000008000558                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x0000000008000b48      0x278 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
-                0x0000000008000b48                HAL_RCC_ClockConfig
+                0x0000000008000b7c      0x278 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+                0x0000000008000b7c                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x0000000008000dc0       0xc4 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
-                0x0000000008000dc0                HAL_RCC_GetSysClockFreq
+                0x0000000008000df4       0xc4 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+                0x0000000008000df4                HAL_RCC_GetSysClockFreq
  .text.RCC_GetSysClockFreqFromPLLSource
-                0x0000000008000e84       0x8c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+                0x0000000008000eb8       0x8c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
  .text.__NVIC_SetPriorityGrouping
-                0x0000000008000f10       0x48 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+                0x0000000008000f44       0x48 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .text.__NVIC_GetPriorityGrouping
-                0x0000000008000f58       0x1c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+                0x0000000008000f8c       0x1c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .text.__NVIC_SetPriority
-                0x0000000008000f74       0x54 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+                0x0000000008000fa8       0x54 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .text.NVIC_EncodePriority
-                0x0000000008000fc8       0x66 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
- *fill*         0x000000000800102e        0x2 
+                0x0000000008000ffc       0x66 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+ *fill*         0x0000000008001062        0x2 
  .text.SysTick_Config
-                0x0000000008001030       0x44 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+                0x0000000008001064       0x44 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .text.HAL_NVIC_SetPriorityGrouping
-                0x0000000008001074       0x16 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
-                0x0000000008001074                HAL_NVIC_SetPriorityGrouping
+                0x00000000080010a8       0x16 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+                0x00000000080010a8                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x000000000800108a       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
-                0x000000000800108a                HAL_NVIC_SetPriority
+                0x00000000080010be       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+                0x00000000080010be                HAL_NVIC_SetPriority
  .text.HAL_SYSTICK_Config
-                0x00000000080010be       0x18 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
-                0x00000000080010be                HAL_SYSTICK_Config
- *fill*         0x00000000080010d6        0x2 
+                0x00000000080010f2       0x18 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+                0x00000000080010f2                HAL_SYSTICK_Config
+ *fill*         0x000000000800110a        0x2 
  .text.HAL_GPIO_Init
-                0x00000000080010d8      0x318 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
-                0x00000000080010d8                HAL_GPIO_Init
+                0x000000000800110c      0x318 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+                0x000000000800110c                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x00000000080013f0       0x30 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
-                0x00000000080013f0                HAL_GPIO_WritePin
+                0x0000000008001424       0x30 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+                0x0000000008001424                HAL_GPIO_WritePin
+ .text.HAL_PWREx_ControlVoltageScaling
+                0x0000000008001454      0x148 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+                0x0000000008001454                HAL_PWREx_ControlVoltageScaling
  *(.glue_7)
- .glue_7        0x0000000008001420        0x0 linker stubs
+ .glue_7        0x000000000800159c        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008001420        0x0 linker stubs
+ .glue_7t       0x000000000800159c        0x0 linker stubs
  *(.eh_frame)
  *(.init)
- .init          0x0000000008001420        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0000000008001420                _init
- .init          0x0000000008001424        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x000000000800159c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x000000000800159c                _init
+ .init          0x00000000080015a0        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x000000000800142c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x000000000800142c                _fini
- .fini          0x0000000008001430        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x0000000008001438                . = ALIGN (0x4)
+ .fini          0x00000000080015a8        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x00000000080015a8                _fini
+ .fini          0x00000000080015ac        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x00000000080015b4                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.AHBPrescTable
-                0x0000000008001438       0x10 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
-                0x0000000008001438                AHBPrescTable
-                0x0000000008001448                . = ALIGN (0x4)
-                0x0000000008001448                _etext = .
+                0x00000000080015b4       0x10 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+                0x00000000080015b4                AHBPrescTable
+                0x00000000080015c4                . = ALIGN (0x4)
+                0x00000000080015c4                _etext = .
 
-.vfp11_veneer   0x0000000008001448        0x0
- .vfp11_veneer  0x0000000008001448        0x0 linker stubs
+.vfp11_veneer   0x00000000080015c4        0x0
+ .vfp11_veneer  0x00000000080015c4        0x0 linker stubs
 
-.v4_bx          0x0000000008001448        0x0
- .v4_bx         0x0000000008001448        0x0 linker stubs
+.v4_bx          0x00000000080015c4        0x0
+ .v4_bx         0x00000000080015c4        0x0 linker stubs
 
-.iplt           0x0000000008001448        0x0
- .iplt          0x0000000008001448        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+.iplt           0x00000000080015c4        0x0
+ .iplt          0x00000000080015c4        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
 
-.rel.dyn        0x0000000008001448        0x0
- .rel.iplt      0x0000000008001448        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+.rel.dyn        0x00000000080015c4        0x0
+ .rel.iplt      0x00000000080015c4        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000000008001448                _sidata = LOADADDR (.data)
+                0x00000000080015c4                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000        0xc load address 0x0000000008001448
+.data           0x0000000020000000        0xc load address 0x00000000080015c4
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -633,10 +717,10 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
                 0x000000002000000c                . = ALIGN (0x4)
                 0x000000002000000c                _edata = .
 
-.igot.plt       0x000000002000000c        0x0 load address 0x0000000008001454
+.igot.plt       0x000000002000000c        0x0 load address 0x00000000080015d0
  .igot.plt      0x000000002000000c        0x0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
 
-.bss            0x000000002000000c        0xc load address 0x0000000008001454
+.bss            0x000000002000000c        0xc load address 0x00000000080015d0
                 0x000000002000000c                . = ALIGN (0x4)
                 0x000000002000000c                _sbss = .
  *(.bss)
@@ -652,7 +736,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
                 0x0000000020000018                _ebss = .
 
 ._user_heap_stack
-                0x0000000020000018      0xc00 load address 0x0000000008001454
+                0x0000000020000018      0xc00 load address 0x00000000080015d0
                 0x0000000020000018                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 0x0000000020000018                PROVIDE (_end = .)
@@ -687,11 +771,13 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000000000000143       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
  .ARM.attributes
-                0x0000000000000177       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+                0x0000000000000177       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
  .ARM.attributes
-                0x00000000000001ab       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+                0x00000000000001ab       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
  .ARM.attributes
-                0x00000000000001df       0x1e /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x00000000000001df       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000000000000213       0x1e /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
 
 .comment        0x0000000000000000       0x33
  .comment       0x0000000000000000       0x33 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
@@ -701,100 +787,110 @@ LOAD linker stubs
  .comment       0x0000000000000033       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
  .comment       0x0000000000000033       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .comment       0x0000000000000033       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ .comment       0x0000000000000033       0x34 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
 
-.debug_info     0x0000000000000000     0x3b30
- .debug_info    0x0000000000000000      0x66b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
- .debug_info    0x000000000000066b      0x583 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
- .debug_info    0x0000000000000bee       0x22 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
- .debug_info    0x0000000000000c10      0xac5 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
- .debug_info    0x00000000000016d5      0xc0b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
- .debug_info    0x00000000000022e0      0xdec CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
- .debug_info    0x00000000000030cc      0x813 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
- .debug_info    0x00000000000038df      0x11a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
- .debug_info    0x00000000000039f9      0x137 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+.debug_info     0x0000000000000000     0x44c6
+ .debug_info    0x0000000000000000      0x6a3 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .debug_info    0x00000000000006a3      0x583 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+ .debug_info    0x0000000000000c26       0x22 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+ .debug_info    0x0000000000000c48      0xac5 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+ .debug_info    0x000000000000170d      0xc0b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+ .debug_info    0x0000000000002318      0xdec CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+ .debug_info    0x0000000000003104      0x813 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ .debug_info    0x0000000000003917      0x95e CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .debug_info    0x0000000000004275      0x11a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_info    0x000000000000438f      0x137 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
 
-.debug_abbrev   0x0000000000000000      0xd48
- .debug_abbrev  0x0000000000000000      0x13c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
- .debug_abbrev  0x000000000000013c      0x113 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
- .debug_abbrev  0x000000000000024f       0x12 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
- .debug_abbrev  0x0000000000000261      0x233 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
- .debug_abbrev  0x0000000000000494      0x272 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
- .debug_abbrev  0x0000000000000706      0x30a CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
- .debug_abbrev  0x0000000000000a10      0x1b8 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
- .debug_abbrev  0x0000000000000bc8       0xcc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
- .debug_abbrev  0x0000000000000c94       0xb4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+.debug_abbrev   0x0000000000000000      0xf99
+ .debug_abbrev  0x0000000000000000      0x17a CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .debug_abbrev  0x000000000000017a      0x113 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+ .debug_abbrev  0x000000000000028d       0x12 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+ .debug_abbrev  0x000000000000029f      0x233 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+ .debug_abbrev  0x00000000000004d2      0x272 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+ .debug_abbrev  0x0000000000000744      0x30a CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+ .debug_abbrev  0x0000000000000a4e      0x1b8 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ .debug_abbrev  0x0000000000000c06      0x213 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .debug_abbrev  0x0000000000000e19       0xcc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_abbrev  0x0000000000000ee5       0xb4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
 
-.debug_aranges  0x0000000000000000      0x420
+.debug_aranges  0x0000000000000000      0x568
  .debug_aranges
-                0x0000000000000000       0x30 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+                0x0000000000000000       0x38 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
  .debug_aranges
-                0x0000000000000030       0x28 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+                0x0000000000000038       0x28 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
  .debug_aranges
-                0x0000000000000058       0x28 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+                0x0000000000000060       0x28 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
  .debug_aranges
-                0x0000000000000080      0x148 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+                0x0000000000000088      0x148 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
  .debug_aranges
-                0x00000000000001c8       0x98 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+                0x00000000000001d0       0x98 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
  .debug_aranges
-                0x0000000000000260      0x128 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+                0x0000000000000268      0x128 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
  .debug_aranges
-                0x0000000000000388       0x58 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+                0x0000000000000390       0x58 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
  .debug_aranges
-                0x00000000000003e0       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+                0x00000000000003e8      0x140 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
  .debug_aranges
-                0x0000000000000400       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+                0x0000000000000528       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_aranges
+                0x0000000000000548       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
 
-.debug_ranges   0x0000000000000000      0x378
- .debug_ranges  0x0000000000000000       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
- .debug_ranges  0x0000000000000020       0x18 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
- .debug_ranges  0x0000000000000038       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
- .debug_ranges  0x0000000000000058      0x138 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
- .debug_ranges  0x0000000000000190       0x88 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
- .debug_ranges  0x0000000000000218      0x118 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
- .debug_ranges  0x0000000000000330       0x48 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+.debug_ranges   0x0000000000000000      0x4b0
+ .debug_ranges  0x0000000000000000       0x28 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .debug_ranges  0x0000000000000028       0x18 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+ .debug_ranges  0x0000000000000040       0x20 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+ .debug_ranges  0x0000000000000060      0x138 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+ .debug_ranges  0x0000000000000198       0x88 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+ .debug_ranges  0x0000000000000220      0x118 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+ .debug_ranges  0x0000000000000338       0x48 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ .debug_ranges  0x0000000000000380      0x130 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
 
-.debug_line     0x0000000000000000     0x279a
- .debug_line    0x0000000000000000      0x273 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
- .debug_line    0x0000000000000273      0x264 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
- .debug_line    0x00000000000004d7       0xf0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
- .debug_line    0x00000000000005c7      0x686 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
- .debug_line    0x0000000000000c4d      0xa29 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
- .debug_line    0x0000000000001676      0x808 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
- .debug_line    0x0000000000001e7e      0x625 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
- .debug_line    0x00000000000024a3      0x138 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
- .debug_line    0x00000000000025db      0x1bf /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+.debug_line     0x0000000000000000     0x3033
+ .debug_line    0x0000000000000000      0x310 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .debug_line    0x0000000000000310      0x264 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+ .debug_line    0x0000000000000574       0xf0 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+ .debug_line    0x0000000000000664      0x686 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+ .debug_line    0x0000000000000cea      0xa29 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+ .debug_line    0x0000000000001713      0x808 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+ .debug_line    0x0000000000001f1b      0x625 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ .debug_line    0x0000000000002540      0x7fc CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .debug_line    0x0000000000002d3c      0x138 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_line    0x0000000000002e74      0x1bf /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
 
-.debug_str      0x0000000000000000     0x1cfd
- .debug_str     0x0000000000000000      0x555 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
-                                        0x62f (size before relaxing)
- .debug_str     0x0000000000000555      0x1fc CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+.debug_str      0x0000000000000000     0x220b
+ .debug_str     0x0000000000000000      0x584 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+                                        0x65e (size before relaxing)
+ .debug_str     0x0000000000000584      0x1fc CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
                                         0x423 (size before relaxing)
- .debug_str     0x0000000000000751       0x9b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
+ .debug_str     0x0000000000000780       0x9b CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/gcc/startup_stm32g431xx.s.o
                                          0xd7 (size before relaxing)
- .debug_str     0x00000000000007ec      0x923 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+ .debug_str     0x000000000000081b      0x914 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
                                         0xc59 (size before relaxing)
- .debug_str     0x000000000000110f      0x331 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+ .debug_str     0x000000000000112f      0x331 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
                                         0x83a (size before relaxing)
- .debug_str     0x0000000000001440      0x511 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+ .debug_str     0x0000000000001460      0x511 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
                                         0xbea (size before relaxing)
- .debug_str     0x0000000000001951      0x185 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ .debug_str     0x0000000000001971      0x185 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
                                         0x571 (size before relaxing)
- .debug_str     0x0000000000001ad6      0x176 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_str     0x0000000000001af6      0x4ee CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+                                        0x800 (size before relaxing)
+ .debug_str     0x0000000000001fe4      0x176 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
                                         0x20b (size before relaxing)
- .debug_str     0x0000000000001c4c       0xb1 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .debug_str     0x000000000000215a       0xb1 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
                                         0x1c0 (size before relaxing)
 
-.debug_frame    0x0000000000000000      0xe94
- .debug_frame   0x0000000000000000       0x74 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
- .debug_frame   0x0000000000000074       0x58 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
- .debug_frame   0x00000000000000cc      0x500 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
- .debug_frame   0x00000000000005cc      0x23c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
- .debug_frame   0x0000000000000808      0x4e8 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
- .debug_frame   0x0000000000000cf0      0x14c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
- .debug_frame   0x0000000000000e3c       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
- .debug_frame   0x0000000000000e68       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+.debug_frame    0x0000000000000000     0x13a8
+ .debug_frame   0x0000000000000000       0x8c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/main.cpp.o
+ .debug_frame   0x000000000000008c       0x58 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Source/Templates/system_stm32g4xx.c.o
+ .debug_frame   0x00000000000000e4      0x500 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.o
+ .debug_frame   0x00000000000005e4      0x23c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.o
+ .debug_frame   0x0000000000000820      0x4e8 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.o
+ .debug_frame   0x0000000000000d08      0x14c CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.o
+ .debug_frame   0x0000000000000e54      0x4fc CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.o
+ .debug_frame   0x0000000000001350       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x000000000000137c       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
 
 .debug_loc      0x0000000000000000      0x2e6
  .debug_loc     0x0000000000000000       0xba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)

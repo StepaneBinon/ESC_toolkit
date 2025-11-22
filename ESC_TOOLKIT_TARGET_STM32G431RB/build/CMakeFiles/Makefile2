@@ -81,12 +81,12 @@ clean: CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/clean
 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/build.make CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/build.make CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target ESC_TOOLKIT_TARGET_STM32G431RB.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target ESC_TOOLKIT_TARGET_STM32G431RB.elf"
 .PHONY : CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles 0
 .PHONY : CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir/rule
