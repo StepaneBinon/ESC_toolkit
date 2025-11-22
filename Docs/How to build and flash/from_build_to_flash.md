@@ -95,6 +95,8 @@ load
 continue
 ```
 
+## Debuging
+
 So advanced GDB functions
 ```bash
 # To change file or load it after the GDB call

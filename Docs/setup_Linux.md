@@ -83,6 +83,7 @@ And GDB seems to need `sudo apt install libncurses5` to work.
 Install `arm-none-eabi-gdb`
 ```bash
 sudo apt install gdb-multiarch
+sudo apt install binutils-multiarch
 # Then arm-none-eabi-gdb is called by gdb-multiarch on Linux
 ```
 

@@ -304,9 +304,9 @@ The real value may vary depending on the variations in voltage and temperature.*
 #include "stm32g4xx_hal_pcd.h"
 #endif /* HAL_PCD_MODULE_ENABLED */
 
-#ifdef HAL_PWR_MODULE_ENABLED
+// #ifdef HAL_PWR_MODULE_ENABLED
 #include "stm32g4xx_hal_pwr.h"
-#endif /* HAL_PWR_MODULE_ENABLED */
+// #endif /* HAL_PWR_MODULE_ENABLED */
 
 #ifdef HAL_QSPI_MODULE_ENABLED
 #include "stm32g4xx_hal_qspi.h"

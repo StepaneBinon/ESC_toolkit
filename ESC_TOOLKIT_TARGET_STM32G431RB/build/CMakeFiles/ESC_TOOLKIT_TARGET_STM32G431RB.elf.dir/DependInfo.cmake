@@ -18,6 +18,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "DEBUG"
   "STM32G431xx"
   "USE_HAL_DRIVER"
+  "USE_NUCLEO_64"
   "__CORTEX_M4"
   "stm32g431xx"
   )
@@ -26,6 +27,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../STM32CubeG4"
   "../STM32CubeG4/Drivers/CMSIS/Include"
+  "../STM32CubeG4/Drivers/BSP/STM32G4xx_Nucleo"
   "../STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Include"
   "../STM32CubeG4/Drivers/STM32G4xx_HAL_Driver/Inc"
   "../Inc"

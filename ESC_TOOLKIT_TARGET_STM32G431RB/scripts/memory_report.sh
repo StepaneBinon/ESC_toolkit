@@ -90,7 +90,7 @@ if [ "$LAYOUT" = "horizontal" ]; then
     echo ""
     echo ""
     # Memory layout box shown separately due to its detail
-    generate_memory_layout_box
+    # generate_memory_layout_box
 else
     # All vertical (default)
     concat_vertical generate_flash_box generate_ram_box generate_code_metrics_box generate_code_analysis_box generate_memory_layout_box

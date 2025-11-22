@@ -42,6 +42,7 @@ set(MCU_DEFINITIONS
     ARM_MATH_CM4
     USE_HAL_DRIVER
     DEBUG
+    USE_NUCLEO_64
 )
 add_compile_definitions(${MCU_DEFINITIONS})
 
@@ -81,6 +82,7 @@ set(PROJECT_SOURCES
 include_directories(
     ${CUBE_ROOT}
     ${CUBE_ROOT}/Drivers/CMSIS/Include
+    ${CUBE_ROOT}/Drivers/BSP/STM32G4xx_Nucleo
     ${CMSIS_DEVICE_DIR}/Include
     ${HAL_DRIVER_DIR}/Inc
     ${CMAKE_SOURCE_DIR}/Inc
