@@ -1,3 +1,0 @@
-/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles/ESC_TOOLKIT_TARGET_STM32G431RB.elf.dir
-/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles/edit_cache.dir
-/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/build/CMakeFiles/rebuild_cache.dir

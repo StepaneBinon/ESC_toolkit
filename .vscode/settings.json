@@ -1,5 +1,0 @@
-{
-    "cortex-debug.gdbPath": "gdb-multiarch",
-    "cortex-debug.stlinkPath": null,
-    // "cmake.cmakePath": "/usr/bin/cmake",
-}

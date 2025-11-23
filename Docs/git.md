@@ -17,3 +17,13 @@ git submodule add https://github.com/STMicroelectronics/STM32CubeG4.git ESC_TOOL
 # Push and then
 git submodule update --init --recursive
 ```
+
+Add a gitignore and remove cached files
+```bash
+# Remove all files from git cache
+git rm -r --cached .
+# Re-add everything (respecting .gitignore)
+git add .
+# Commit the changes
+git commit -m "Clean up ignored files"
+```
