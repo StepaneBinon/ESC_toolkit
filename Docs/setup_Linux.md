@@ -9,7 +9,7 @@ Installations:
 
 ## 1. WSL
 
-Install Ubuntu 22.04 using powershell as admin
+Install Ubuntu 22.04 using powershell as **ADMIN**
 ```bash
 # Install WSL2
 wsl --install
@@ -92,23 +92,36 @@ Or build from source: https://openocd.org/doc-release/README
 
 ## GNU toolchain
 
-https://developer.arm.com/downloads/-/gnu-rm
+Install tarball in WSL and extract it: https://developer.arm.com/downloads/-/gnu-rm
+```bash
+sudo apt-get update && sudo apt-get install bzip2
+tar -xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+sudo mv gcc-arm-none-eabi-10.3-2021.10 /opt/
+echo 'export PATH=/opt/gcc-arm-none-eabi-10.3-2021.10/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+GDB seems to need `sudo apt install libncurses5` to work.
 
-Install tarball in WSL and extract it
-
-And GDB seems to need `sudo apt install libncurses5` to work.
-
-Install `arm-none-eabi-gdb` using `gdb-multiarch`
+Then, install the debugger `arm-none-eabi-gdb` using `gdb-multiarch`
 ```bash
 sudo apt install gdb-multiarch
 sudo apt install binutils-multiarch
 # arm-none-eabi-gdb is called by gdb-multiarch on Linux
 ```
 
+## Cmake
+
+To get access to the CMakeLists tool
+```bash
+sudo apt install cmake
+source ~/.bashrc
+```
+
 ## VS Code extensions
 
  - Cortex debug (and the extensions it relies on)
  - C/C++ Extension
+ - Git graph
 
 launch.json
 ```json

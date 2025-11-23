@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
-project(ESC_TOOLKIT_TARGET_STM32G431RB C CXX ASM)
 
 # --- Toolchain and Architecture Configuration ---
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR arm)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 set(TOOLCHAIN_PREFIX "arm-none-eabi")
 
@@ -12,6 +12,8 @@ set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}-g++)
 set(CMAKE_ASM_COMPILER ${TOOLCHAIN_PREFIX}-gcc)
 set(CMAKE_OBJCOPY ${TOOLCHAIN_PREFIX}-objcopy)
 set(CMAKE_SIZE ${TOOLCHAIN_PREFIX}-size)
+
+project(ESC_TOOLKIT_TARGET_STM32G431RB C CXX ASM)
 
 # Target MCU settings
 set(MCU_NAME "stm32g431xx")
