@@ -1,5 +1,6 @@
 #include "main.hpp"
 #include "stm32g4xx_hal.h"
+// #include "stm32g4xx_it.h"
 
 #define LED_PIN GPIO_PIN_5
 #define LED_PORT GPIOA
@@ -23,8 +24,10 @@ int main(void)
     {
         var_a = var_a + 1;
         HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);    // Turn ON
+        HAL_Delay(1000);
         HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);  // Turn OFF
-        var_b = var_b + 2;
+        HAL_Delay(1000);
+        var_b = var_b + 1;
     }
 }
 

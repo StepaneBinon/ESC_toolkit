@@ -126,34 +126,89 @@ source ~/.bashrc
 launch.json
 ```json
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Cortex Debug (OpenOCD)",
-            "cwd": "${workspaceFolder}",
-            "executable": "${workspaceFolder}/ESC_TOOLKIT_TARGET_STM32G431RB/build/ESC_TOOLKIT_TARGET_STM32G431RB.elf",
-            "request": "launch",
-            "type": "cortex-debug",
-            "runToEntryPoint": "main",
-            "servertype": "openocd",
-            "device": "STM32G431RB",
-            "configFiles": [
-            "interface/stlink.cfg",
-            "target/stm32g4x.cfg"
-            ],
-            // "preLaunchTask": "Build",  // This runs before debugging starts
-            // "showDevDebugOutput": "raw"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Cortex Debug (OpenOCD)",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/ESC_TOOLKIT_TARGET_STM32G431RB/build/ESC_TOOLKIT_TARGET_STM32G431RB.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "runToEntryPoint": "main",
+      "servertype": "openocd",
+      "device": "STM32G431RB",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32g4x.cfg"
+      ],
+      "preLaunchTask": "Build",  // This runs before debugging starts
+      // "showDevDebugOutput": "raw"
+    }
+  ]
 }
 ```
 
 settings.json
 ```json
 {
-    "cortex-debug.gdbPath": "gdb-multiarch",
-    "cortex-debug.stlinkPath": null,
-    // "cmake.cmakePath": "/usr/bin/cmake",
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "${workspaceFolder}/ESC_TOOLKIT_TARGET_STM32G431RB/build",
+        // "--config",
+        // "Debug",
+        // "-j",
+        // "8"  // Parallel build with 8 jobs - adjust based on your CPU cores
+        // "--verbose"  
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "clear": false
+      },
+      "isBackground": false
+    },
+    {
+      "label": "Clean Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "${workspaceFolder}/ESC_TOOLKIT_TARGET_STM32G431RB/build",
+        "--target",
+        "clean"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Configure CMake",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-B",
+        "${workspaceFolder}/ESC_TOOLKIT_TARGET_STM32G431RB/build",
+        "-S",
+        "${workspaceFolder}/ESC_TOOLKIT_TARGET_STM32G431RB",
+        "-DCMAKE_BUILD_TYPE=Debug"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
 }
 ```
 
