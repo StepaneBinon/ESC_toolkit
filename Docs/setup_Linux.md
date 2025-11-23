@@ -9,7 +9,21 @@ Installations:
 
 ## 1. WSL
 
-Install Ubuntu 22.04
+Install Ubuntu 22.04 using powershell as admin
+```bash
+# Install WSL2
+wsl --install
+# Reboot (required)
+Restart-Computer
+# After reboot, set WSL2 as default
+wsl --set-default-version 2
+# Check distro available
+wsl --list --online
+# Install a distro (Ubuntu by default, or specify)
+wsl --install -d Ubuntu-22.04
+# Check status
+wsl --list --verbose
+```
 
 To check how much memory is available for your distro
 ```bash
@@ -42,11 +56,21 @@ lsusb
 ls /dev/tty* # Look for ttyUSB0 / ttyACM0
 ```
 
-## 3. Rules
+## OpenOCD
 
-To give access:
+Use the command
+```bash
+sudo apt install openocd
+```
 
-In etc/udev/rules.d/45-stlink.rules => Change idProduct
+And give to openOCD the rights to connect to the ST-Link 
+```bash
+# Create a rule file for st-link
+sudo touch /etc/udev/rules.d/45-stlink.rules
+sudo nano /etc/udev/rules.d/45-stlink.rules
+```
+
+And copy the following content inside
 ```bash
 # STLINK V1
 ATTRS{idProduct}=="3744", ATTRS{idVendor}=="0483", MODE="666", GROUP="plugdev"
@@ -58,19 +82,13 @@ ATTRS{idProduct}=="374b", ATTRS{idVendor}=="0483", MODE="666", GROUP="plugdev"
 ATTRS{idProduct}=="374e", ATTRS{idVendor}=="0483", MODE="666", GROUP="plugdev"
 ```
 
-To update and trigger the changes
+Apply the rules (restart also work)
 ```bash
-sudo udevadm control --reload-rules
-sudo udevadm trigger
+sudo udevadm control --reload-rules 
+sudo udevadm trigger # Reload all connected device as if they where plug in again
 ```
 
-## OpenOCD
-
-Build from source or use simple command
-```bash
-sudo apt install openocd
-```
-https://openocd.org/doc-release/README
+Or build from source: https://openocd.org/doc-release/README
 
 ## GNU toolchain
 
@@ -80,14 +98,54 @@ Install tarball in WSL and extract it
 
 And GDB seems to need `sudo apt install libncurses5` to work.
 
-Install `arm-none-eabi-gdb`
+Install `arm-none-eabi-gdb` using `gdb-multiarch`
 ```bash
 sudo apt install gdb-multiarch
 sudo apt install binutils-multiarch
-# Then arm-none-eabi-gdb is called by gdb-multiarch on Linux
+# arm-none-eabi-gdb is called by gdb-multiarch on Linux
 ```
 
-## Install the HAL/RTOS
+## VS Code extensions
+
+ - Cortex debug (and the extensions it relies on)
+ - C/C++ Extension
+
+launch.json
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug (OpenOCD)",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/ESC_TOOLKIT_TARGET_STM32G431RB/build/ESC_TOOLKIT_TARGET_STM32G431RB.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "openocd",
+            "device": "STM32G431RB",
+            "configFiles": [
+            "interface/stlink.cfg",
+            "target/stm32g4x.cfg"
+            ],
+            // "preLaunchTask": "Build",  // This runs before debugging starts
+            // "showDevDebugOutput": "raw"
+        }
+    ]
+}
+```
+
+settings.json
+```json
+{
+    "cortex-debug.gdbPath": "gdb-multiarch",
+    "cortex-debug.stlinkPath": null,
+    // "cmake.cmakePath": "/usr/bin/cmake",
+}
+```
+
+
+## Install the HAL/RTOS (optionnal)
 
 ### --------- RTOS: NuttX
 
@@ -108,7 +166,7 @@ sudo apt install unzip
 ### --------- HAL: 
 
 
-## STM32CubeProgrammer
+## STM32CubeProgrammer (optionnal)
 
 Download it from https://www.st.com/en/development-tools/stm32cubeprog.html
 
