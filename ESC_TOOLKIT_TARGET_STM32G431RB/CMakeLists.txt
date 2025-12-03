@@ -98,6 +98,7 @@ set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/linker_minimal.ld)
 if(NOT EXISTS ${LINKER_SCRIPT})
     message(FATAL_ERROR "Linker script not found: ${LINKER_SCRIPT}")
 endif()
+# For project dev: -Wall -Wextra -Werror -Wconversion -Wshadow -Wpedantic -fsanitize=address,undefined
 set(CMAKE_EXE_LINKER_FLAGS "-T${LINKER_SCRIPT} -Wl,--gc-sections -Wl,-Map=${PROJECT_NAME}.map -specs=nano.specs -specs=nosys.specs" CACHE STRING "Linker flags" FORCE)
 
 # --- Build the Executable ---
