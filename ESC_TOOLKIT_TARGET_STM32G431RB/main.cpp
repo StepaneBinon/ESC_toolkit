@@ -13,7 +13,7 @@
 #define BL GPIO_PIN_13
 #define CH GPIO_PIN_14
 #define CL GPIO_PIN_15
-#define MOSFET_MASK AH|AL|BH|BL|CH|CL 
+#define MOSFET_MASK (AH|AL|BH|BL|CH|CL)
 
 #define DEAD_TIME 18
 #define PWM_OFF 1000
@@ -167,11 +167,8 @@ uint32_t DWT_GetCycles(void) {
 }
 
 static inline uint32_t MOSFET_WriteAll(uint32_t phase_pattern) {
-    uint32_t bsrr_value = 0;
-    
-    bsrr_value |= ((phase_pattern) & MOSFET_MASK);
-    bsrr_value |= (((~phase_pattern) & MOSFET_MASK) << 16);
-    
+    const uint32_t bsrr_value = (phase_pattern & MOSFET_MASK)
+                                | ((~phase_pattern & MOSFET_MASK) << 16);
     MOSFET_PORT->BSRR = bsrr_value;
 }
 
@@ -197,57 +194,6 @@ int main(void)
         HAL_Delay(500);
     }
 }
-
-// int main(void)
-// {
-//     // Initialize HAL library
-//     HAL_Init();
-//     // Configure system clock
-//     SystemClock_Config();
-//     // Initialize GPIO for LED
-//     GPIO_Init();
-//     // Init timers
-//     DWT_Init();
-
-//     // uint32_t pattern = 0x21;
-//     // uint32_t odr = 0;
-//     // MOSFET_PORT->BSRR = 0x0000;
-//     // while (1) {
-//     //     // MOSFET_WriteAll(pattern);
-//     //     // pattern++;
-//     //     odr = GPIOB->ODR;
-//     //     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_All, GPIO_PIN_SET);
-//     //     odr = GPIOB->ODR;
-//     //     HAL_Delay(500);
-//     //     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_All, GPIO_PIN_RESET);
-//     //     odr = GPIOB->ODR;
-//     //     HAL_Delay(500);
-//     // }
-
-//     uint32_t tcom_last = DWT_GetCycles();
-//     uint32_t cmd_array = 0b100001;
-//     while(1)
-//     {
-//         uint32_t tcom_curr = DWT_GetCycles();
-//         int32_t v_bus = 222; //V
-//         Sector sector_prev = Sector::S0; 
-//         int32_t v_ph = 222; //V
-//         Sign sign_prev = Sign::Negi;
-//         uint32_t timer = 100000;
-
-//         const auto temp = getCmdArray(tcom_last, tcom_curr, v_bus, sector_prev, v_ph, sign_prev, timer);
-//         if (!temp.has_value()) {
-//             continue;
-//         }
-//         cmd_array = temp.value();
-
-//         HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);    // Turn ON
-//         HAL_Delay(500);
-//         HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);  // Turn OFF
-//         HAL_Delay(500);
-//         tcom_curr = DWT_GetCycles();
-//     }
-// }
 
 void SystemClock_Config(void)
 {
@@ -299,18 +245,93 @@ void GPIO_Init(void)
     __HAL_RCC_GPIOB_CLK_ENABLE();
     
     // Configure LED pin
+    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);
     GPIO_InitStruct.Pin = LED_PIN;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;  // Push-pull output
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     HAL_GPIO_Init(LED_PORT, &GPIO_InitStruct);
 
-    // Configure PORT_B pins
-    GPIO_InitStruct.Pin = GPIO_PIN_10;
+    // Configure MOSFETS pins
+    HAL_GPIO_WritePin(GPIOB, AH|AL|BH|BL|CH|CL, GPIO_PIN_RESET);
+    GPIO_InitStruct.Pin = AH|AL|BH|BL|CH|CL;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;  // Push-pull output
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+}
+
+void ADC1_Init(void)
+{
+    __HAL_RCC_ADC12_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOC_CLK_ENABLE();
+    
+    // PC3 -> ADC1_IN9, PA0 -> ADC1_IN1, PA1 -> ADC1_IN2
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_1;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    
+    GPIO_InitStruct.Pin = GPIO_PIN_3;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+    
+    ADC_HandleTypeDef hadc1 = {0};
+    hadc1.Instance = ADC1;
+    hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+    hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+    hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+    // hadc1.Init.GainCompensation = ADC_RESOLUTION_12B;
+    hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
+    hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+    // hadc1.Init.LowPowerAutoWait = DISABLE;
+    hadc1.Init.ContinuousConvMode = DISABLE;
+    hadc1.Init.NbrOfConversion = 3;
+    hadc1.Init.DiscontinuousConvMode = DISABLE;
+    // hadc1.Init.NbrOfDiscConversion = DISABLE;
+    hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+    // hadc1.Init.ExternalTrigConvEdge = ADC_SOFTWARE_START;
+    // hadc1.Init.SamplingMode = ADC_SOFTWARE_START;
+    hadc1.Init.DMAContinuousRequests = DISABLE;
+    hadc1.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
+    // hadc1.Init.OversamplingMode = ADC_OVR_DATA_OVERWRITTEN;
+    // hadc1.Init.Oversampling = ADC_OVR_DATA_OVERWRITTEN;
+    HAL_ADC_Init(&hadc1);
+    
+    ADC_ChannelConfTypeDef sConfig = {0};
+    // Channel 1 (PA0)
+    sConfig.Channel = ADC_CHANNEL_1;
+    sConfig.Rank = ADC_REGULAR_RANK_1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+    // sConfig.SingleDiff = ADC_REGULAR_RANK_1;
+    // sConfig.OffsetNumber = ADC_REGULAR_RANK_1;
+    // sConfig.Offset = ADC_REGULAR_RANK_1;
+    // sConfig.OffsetSign = ADC_REGULAR_RANK_1;
+    // sConfig.OffsetSaturation = ADC_REGULAR_RANK_1;
+    HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+    // Channel 2 (PA1)
+    sConfig.Channel = ADC_CHANNEL_2;
+    sConfig.Rank = ADC_REGULAR_RANK_2;
+    // sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+    // sConfig.SingleDiff = ADC_REGULAR_RANK_1;
+    // sConfig.OffsetNumber = ADC_REGULAR_RANK_1;
+    // sConfig.Offset = ADC_REGULAR_RANK_1;
+    // sConfig.OffsetSign = ADC_REGULAR_RANK_1;
+    // sConfig.OffsetSaturation = ADC_REGULAR_RANK_1;
+    HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+    // Channel 9 (PC3)
+    sConfig.Channel = ADC_CHANNEL_9;
+    sConfig.Rank = ADC_REGULAR_RANK_3;
+    // sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+    // sConfig.SingleDiff = ADC_REGULAR_RANK_1;
+    // sConfig.OffsetNumber = ADC_REGULAR_RANK_1;
+    // sConfig.Offset = ADC_REGULAR_RANK_1;
+    // sConfig.OffsetSign = ADC_REGULAR_RANK_1;
+    // sConfig.OffsetSaturation = ADC_REGULAR_RANK_1;
+    HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+    
+    HAL_ADC_Start(&hadc1);
 }
 
 /**

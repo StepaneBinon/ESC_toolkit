@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "stm32g4xx_hal.h"
+#include "stm32g4xx_hal.h"
 #include "stm32g4xx_nucleo.h"
 
 /* Exported functions prototypes ---------------------------------------------*/
