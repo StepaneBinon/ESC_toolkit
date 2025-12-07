@@ -33,7 +33,7 @@ set(COMMON_CFLAGS
 )
 string(REPLACE ";" " " COMMON_CFLAGS_STR "${COMMON_CFLAGS}")
 set(CMAKE_C_FLAGS "${COMMON_CFLAGS_STR} -std=gnu11" CACHE STRING "C compiler flags" FORCE)
-set(CMAKE_CXX_FLAGS "${COMMON_CFLAGS_STR} -fno-exceptions -fno-rtti -std=gnu++17" CACHE STRING "CXX compiler flags" FORCE)
+set(CMAKE_CXX_FLAGS "${COMMON_CFLAGS_STR} -O0 -fno-exceptions -fno-rtti -std=gnu++17" CACHE STRING "CXX compiler flags" FORCE)
 set(CMAKE_ASM_FLAGS "${COMMON_CFLAGS_STR} -x assembler-with-cpp" CACHE STRING "ASM compiler flags" FORCE)
 
 # Preprocessor definitions

@@ -170,6 +170,24 @@ static inline void MOSFET_WriteAll(uint32_t phase_pattern) {
     MOSFET_PORT->BSRR = bsrr_value;
 }
 
+// Trigger injected conversion and read all 3 channels
+void ReadInjectedADC(volatile uint32_t* results)
+{
+    // Start injected conversion
+    HAL_ADCEx_InjectedStart(&hadc1);
+    
+    // Wait for conversion to complete
+    HAL_ADCEx_InjectedPollForConversion(&hadc1, HAL_MAX_DELAY);
+    
+    // Read all 3 injected channels
+    results[0] = HAL_ADCEx_InjectedGetValue(&hadc1, ADC_INJECTED_RANK_1); // Channel 6
+    results[1] = HAL_ADCEx_InjectedGetValue(&hadc1, ADC_INJECTED_RANK_2); // Channel 7
+    results[2] = HAL_ADCEx_InjectedGetValue(&hadc1, ADC_INJECTED_RANK_3); // Channel 8
+    
+    // Stop injected conversion
+    HAL_ADCEx_InjectedStop(&hadc1);
+}
+
 int main(void)
 {
     // Initialize HAL library
@@ -183,6 +201,8 @@ int main(void)
     // Init ADC
     ADC1_Init();
 
+    volatile uint32_t adc_values[3];
+
     // Blink through each pin one at a time
     while (1) {
         uint32_t phase_pattern = SSC(Sector::S0);
@@ -192,6 +212,7 @@ int main(void)
         MOSFET_WriteAll(phase_pattern << 16);
         HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);  // Turn OFF
         HAL_Delay(500);
+        ReadInjectedADC(adc_values);
     }
 }
 
@@ -259,17 +280,16 @@ void GPIO_Init(void)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     // Configure ADC1 pins
-    GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_6;
-    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-    GPIO_InitStruct.Pin = GPIO_PIN_3;
-    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+    // GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_6;
+    // GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    // GPIO_InitStruct.Pull = GPIO_NOPULL;
+    // HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    // GPIO_InitStruct.Pin = GPIO_PIN_3;
+    // HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 }
 
 void ADC1_Init(void)
 {
-    ADC_MultiModeTypeDef multimode = {0};
     ADC_InjectionConfTypeDef sConfigInjected = {0};
     
     // Common config
@@ -328,7 +348,7 @@ void ADC1_Init(void)
         Error_Handler();
     }
     
-    HAL_ADC_Start(&hadc1);
+    HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
 }
 
 /**

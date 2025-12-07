@@ -1,4 +1,3 @@
-#warning "coucou"
 #include "main.hpp"
 
 // Initializes the Global MSP
