@@ -1,10 +1,4 @@
 #include "main.hpp"
-#include <cstdint>
-#include <cstdlib>
-#include <optional>
-#include <iostream>
-#include "stm32g4xx_hal.h"
-// #include "stm32g4xx_it.h"
 
 #define MOSFET_PORT GPIOB
 #define AH GPIO_PIN_10
@@ -277,8 +271,6 @@ void ADC1_Init(void)
 {
     ADC_MultiModeTypeDef multimode = {0};
     ADC_InjectionConfTypeDef sConfigInjected = {0};
-    
-    __HAL_RCC_ADC12_CLK_ENABLE();
     
     // Common config
     hadc1.Instance = ADC1;

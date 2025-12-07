@@ -1,14 +1,26 @@
 
 #ifndef __MAIN_HPP
 #define __MAIN_HPP
-#warning "coucou2"
-#include <stdint.h>
-#include <stdio.h>
+
 #include "stm32g4xx_hal.h"
+// #include "stm32g4xx_it.h"
 // #include "stm32g4xx_nucleo.h"
 
+#ifdef __cplusplus
+#include <cstdint>
+#include <cstdlib>
+#include <optional>
+#include <iostream>
+#endif // __cplusplus
+
 /* Exported functions prototypes ---------------------------------------------*/
+#ifdef __cplusplus
+extern "C" {
+#endif
 void Error_Handler(void);
+#ifdef __cplusplus
+}
+#endif
 
 /* Private defines ----------------------------------------------------------- */
 #define RCC_OSC32_OUT_Pin GPIO_PIN_14

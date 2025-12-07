@@ -56,14 +56,15 @@ set(CUBE_ROOT ${CMAKE_SOURCE_DIR}/STM32CubeG4)
 set(HAL_DRIVER_DIR ${CUBE_ROOT}/Drivers/STM32G4xx_HAL_Driver)
 set(HAL_SOURCES
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal.c
-    ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_adc.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_adc_ex.c
+    ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_adc.c
+    ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_rcc_ex.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_rcc.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_cortex.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_gpio.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_pwr_ex.c
     ${CMAKE_SOURCE_DIR}/Src/stm32g4xx_it.c
-    # ${CMAKE_SOURCE_DIR}/Src/stm32g4xx_hal_msp.c
+    ${CMAKE_SOURCE_DIR}/Src/stm32g4xx_hal_msp.c
     # Add other HAL sources as needed
 )
 
