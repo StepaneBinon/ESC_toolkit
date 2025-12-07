@@ -1,10 +1,9 @@
 
 #ifndef __MAIN_HPP
 #define __MAIN_HPP
-
+#warning "coucou2"
 #include <stdint.h>
 #include <stdio.h>
-#include "stm32g4xx_hal.h"
 #include "stm32g4xx_hal.h"
 // #include "stm32g4xx_nucleo.h"
 

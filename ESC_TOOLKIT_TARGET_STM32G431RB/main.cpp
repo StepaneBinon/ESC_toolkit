@@ -170,7 +170,7 @@ uint32_t DWT_GetCycles(void) {
     return DWT->CYCCNT;
 }
 
-static inline uint32_t MOSFET_WriteAll(uint32_t phase_pattern) {
+static inline void MOSFET_WriteAll(uint32_t phase_pattern) {
     const uint32_t bsrr_value = (phase_pattern & MOSFET_MASK)
                                 | ((~phase_pattern & MOSFET_MASK) << 16);
     MOSFET_PORT->BSRR = bsrr_value;
@@ -278,6 +278,8 @@ void ADC1_Init(void)
     ADC_MultiModeTypeDef multimode = {0};
     ADC_InjectionConfTypeDef sConfigInjected = {0};
     
+    __HAL_RCC_ADC12_CLK_ENABLE();
+    
     // Common config
     hadc1.Instance = ADC1;
     hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
@@ -299,7 +301,6 @@ void ADC1_Init(void)
     hadc1.Init.OversamplingMode = DISABLE;
     // hadc1.Init.Oversampling = ADC_OVR_DATA_PRESERVED;
     if (HAL_ADC_Init(&hadc1) != HAL_OK) {
-        int coucou;
         Error_Handler();
     }
 
@@ -349,3 +350,17 @@ void Error_Handler(void)
   {
   }
 }
+
+#ifdef USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line) {
+    // printf("Wrong parameters value: file %s on line %d\r\n", file, line);
+    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);    // Turn ON
+}
+#endif /* USE_FULL_ASSERT */

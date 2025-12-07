@@ -45,6 +45,7 @@ set(MCU_DEFINITIONS
     USE_HAL_DRIVER
     DEBUG
     USE_NUCLEO_64
+    USE_FULL_ASSERT
 )
 add_compile_definitions(${MCU_DEFINITIONS})
 
@@ -62,6 +63,7 @@ set(HAL_SOURCES
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_gpio.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_pwr_ex.c
     ${CMAKE_SOURCE_DIR}/Src/stm32g4xx_it.c
+    # ${CMAKE_SOURCE_DIR}/Src/stm32g4xx_hal_msp.c
     # Add other HAL sources as needed
 )
 

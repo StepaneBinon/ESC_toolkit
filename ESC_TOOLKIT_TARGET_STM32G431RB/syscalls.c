@@ -5,6 +5,7 @@
 
 #include <sys/stat.h>
 #include <errno.h>
+#include "stm32g4xx.h"
 
 /* Minimal implementations to satisfy linker */
 
@@ -50,6 +51,25 @@ int _write(int file, char *ptr, int len) {
     (void)ptr;
     return len;
 }
+// void UART_Init(void) {
+//     RCC->APB1ENR1 |= RCC_APB1ENR1_USART2EN;  // Enable USART2 clock
+//     RCC->AHB2ENR |= RCC_AHB2ENR_GPIOAEN;     // Enable GPIOA clock
+    
+//     // PA2=TX, PA3=RX as AF7 (USART2)
+//     GPIOA->MODER &= ~(GPIO_MODER_MODE2 | GPIO_MODER_MODE3);
+//     GPIOA->MODER |= (2 << GPIO_MODER_MODE2_Pos) | (2 << GPIO_MODER_MODE3_Pos);
+//     GPIOA->AFR[0] |= (7 << GPIO_AFRL_AFSEL2_Pos) | (7 << GPIO_AFRL_AFSEL3_Pos);
+    
+//     USART2->BRR = 170000000 / 115200;
+//     USART2->CR1 = USART_CR1_TE | USART_CR1_UE;
+// }
+// int _write(int file, char *ptr, int len) {
+//     for(int i = 0; i < len; i++) {
+//         while(!(USART2->ISR & USART_ISR_TXE));
+//         USART2->TDR = *ptr++;
+//     }
+//     return len;
+// }
 
 void *_sbrk(int incr) {
     extern char _end; /* Defined by linker */
