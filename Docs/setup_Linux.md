@@ -219,8 +219,10 @@ settings.json
 
 https://nuttx.apache.org/docs/latest/quickstart/index.html
 
-Create a `/nuttxspace/` and clone inside
+Create a `/nuttxspace` folder and clone inside
 ```bash
+mkdir nuttxspace
+cd nuttxspace
 git clone https://github.com/apache/nuttx.git nuttx
 git clone https://github.com/apache/nuttx-apps apps
 ```

@@ -5,7 +5,9 @@
 ### Setup your board
 
 Search for your board 
+```bash
 ./tools/configure.sh -L | grep g4
+```
 
 Set the app folder and configure .config
 ```bash
