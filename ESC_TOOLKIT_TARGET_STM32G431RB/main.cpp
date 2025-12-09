@@ -16,6 +16,15 @@
 #define LED_PIN GPIO_PIN_5
 #define LED_PORT GPIOA
 
+ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc2;
+// TIM_HandleTypeDef htim1;
+
+void SystemClock_Config(void);
+void GPIO_Init(void);
+void ADC1_Init(void);
+// static void MX_TIM1_Init(void);
+
 enum class Sector { 
     S0, S1, S2, S3, S4, S5
 };
@@ -182,15 +191,6 @@ void ReadInjectedADC(volatile uint32_t* results)
     HAL_ADCEx_InjectedStop(&hadc1);
 }
 
-ADC_HandleTypeDef hadc1;
-ADC_HandleTypeDef hadc2;
-TIM_HandleTypeDef htim1;
-
-void SystemClock_Config(void);
-void GPIO_Init(void);
-void ADC1_Init(void);
-static void MX_TIM1_Init(void);
-
 int main(void)
 {
     // Reset of all peripherals, Initializes the Flash interface and the Systick.
@@ -201,7 +201,7 @@ int main(void)
     GPIO_Init();
     DWT_Init();
     ADC1_Init();
-    MX_TIM1_Init();
+    // MX_TIM1_Init();
 
     volatile uint32_t adc_values[3];
 
@@ -223,13 +223,10 @@ void SystemClock_Config(void)
     RCC_OscInitTypeDef RCC_OscInitStruct = {0};
     RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-    /** Configure the main internal regulator output voltage
-     */
+    // Configure the main internal regulator output voltage
     HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1_BOOST);
 
-    /** Initializes the RCC Oscillators according to the specified parameters
-     * in the RCC_OscInitTypeDef structure.
-     */
+    // Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef structure.
     RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
     RCC_OscInitStruct.HSIState = RCC_HSI_ON;
     RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
@@ -244,8 +241,7 @@ void SystemClock_Config(void)
         Error_Handler();
     }
 
-    /** Initializes the CPU, AHB and APB buses clocks
-     */
+    // Initializes the CPU, AHB and APB buses clocks
     RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK|RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
     RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
     RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
