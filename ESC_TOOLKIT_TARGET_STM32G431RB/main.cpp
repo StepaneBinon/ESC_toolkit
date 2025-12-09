@@ -16,13 +16,6 @@
 #define LED_PIN GPIO_PIN_5
 #define LED_PORT GPIOA
 
-ADC_HandleTypeDef hadc1;
-ADC_HandleTypeDef hadc2;
-
-void SystemClock_Config(void);
-void GPIO_Init(void);
-void ADC1_Init(void);
-
 enum class Sector { 
     S0, S1, S2, S3, S4, S5
 };
@@ -100,11 +93,11 @@ Sector getNextSector(const Phase phase, const Dir dir) {
 }
 
 std::optional<Sector> getSector(const uint32_t tcom_last, 
-                         const uint32_t tcom_curr, 
-                         const int32_t v_bus, 
-                         const Sector sector_prev, 
-                         const int32_t v_ph,
-                         const Sign sign_prev) {
+                                const uint32_t tcom_curr, 
+                                const int32_t v_bus, 
+                                const Sector sector_prev, 
+                                const int32_t v_ph,
+                                const Sign sign_prev) {
     if (tcom_curr - tcom_last < DEAD_TIME) {
         return std::nullopt;
     }
@@ -114,6 +107,7 @@ std::optional<Sector> getSector(const uint32_t tcom_last,
     const int32_t delta_v = v_ph - v_neutral;
     const int32_t abs_delta_v = std::abs(delta_v);
     const Sign sign_curr = (delta_v == abs_delta_v) ? Sign::Posi : Sign::Negi;
+    // If no ZC
     if (sign_curr == sign_prev || abs_delta_v >= V_HYST) {
         return std::nullopt;
     } 
@@ -188,18 +182,26 @@ void ReadInjectedADC(volatile uint32_t* results)
     HAL_ADCEx_InjectedStop(&hadc1);
 }
 
+ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc2;
+TIM_HandleTypeDef htim1;
+
+void SystemClock_Config(void);
+void GPIO_Init(void);
+void ADC1_Init(void);
+static void MX_TIM1_Init(void);
+
 int main(void)
 {
-    // Initialize HAL library
+    // Reset of all peripherals, Initializes the Flash interface and the Systick.
     HAL_Init();
-    // Configure system clock
+    // Configure the system clock
     SystemClock_Config();
-    // Initialize GPIO for LED
+    // Initialize all configured peripherals
     GPIO_Init();
-    // Init timers
     DWT_Init();
-    // Init ADC
     ADC1_Init();
+    MX_TIM1_Init();
 
     volatile uint32_t adc_values[3];
 
@@ -253,39 +255,6 @@ void SystemClock_Config(void)
     if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK) {
         Error_Handler();
     }
-}
-
-void GPIO_Init(void)
-{
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-    
-    // Enable GPIO clock (change based on your port)
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    __HAL_RCC_GPIOB_CLK_ENABLE();
-    
-    // Configure LED pin
-    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);
-    GPIO_InitStruct.Pin = LED_PIN;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;  // Push-pull output
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-    HAL_GPIO_Init(LED_PORT, &GPIO_InitStruct);
-
-    // Configure MOSFETS pins
-    HAL_GPIO_WritePin(GPIOB, AH|AL|BH|BL|CH|CL, GPIO_PIN_RESET);
-    GPIO_InitStruct.Pin = AH|AL|BH|BL|CH|CL;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;  // Push-pull output
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-    // Configure ADC1 pins
-    // GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_6;
-    // GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-    // GPIO_InitStruct.Pull = GPIO_NOPULL;
-    // HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-    // GPIO_InitStruct.Pin = GPIO_PIN_3;
-    // HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 }
 
 void ADC1_Init(void)
@@ -349,6 +318,39 @@ void ADC1_Init(void)
     }
     
     HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
+}
+
+void GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    
+    // Enable GPIO clock (change based on your port)
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    
+    // Configure LED pin
+    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);
+    GPIO_InitStruct.Pin = LED_PIN;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;  // Push-pull output
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    HAL_GPIO_Init(LED_PORT, &GPIO_InitStruct);
+
+    // Configure MOSFETS pins
+    HAL_GPIO_WritePin(GPIOB, AH|AL|BH|BL|CH|CL, GPIO_PIN_RESET);
+    GPIO_InitStruct.Pin = AH|AL|BH|BL|CH|CL;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;  // Push-pull output
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    // Configure ADC1 pins
+    // GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_6;
+    // GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    // GPIO_InitStruct.Pull = GPIO_NOPULL;
+    // HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    // GPIO_InitStruct.Pin = GPIO_PIN_3;
+    // HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 }
 
 /**
