@@ -64,6 +64,7 @@ set(HAL_SOURCES
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_gpio.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_pwr_ex.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_tim.c
+    ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_tim_ex.c
     ${CMAKE_SOURCE_DIR}/Src/stm32g4xx_it.c
     ${CMAKE_SOURCE_DIR}/Src/stm32g4xx_hal_msp.c
     # Add other HAL sources as needed
