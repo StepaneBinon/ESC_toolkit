@@ -194,7 +194,7 @@ void ReadInjectedADC(volatile uint32_t* results)
 int main(void)
 {
     // Reset of all peripherals, Initializes the Flash interface and the Systick.
-Add the     HAL_Init();
+    HAL_Init();
     // Configure the system clock
     SystemClock_Config();
     // Initialize all configured peripherals
