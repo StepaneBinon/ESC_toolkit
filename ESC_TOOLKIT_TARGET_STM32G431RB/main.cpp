@@ -38,15 +38,6 @@ static void TIM3_Init(void);
 enum class Sector { 
     S0, S1, S2, S3, S4, S5
 };
-enum class Phase { 
-    A, B, C
-};
-enum class Dir { 
-    Up, Down
-};
-enum class Sign { 
-    Negi, Posi
-};
 
 uint32_t SSC(const Sector sector) {
     if (sector == Sector::S0) {
@@ -67,114 +58,6 @@ uint32_t SSC(const Sector sector) {
     else {
         return CH|BL;
     }
-}
-
-Phase getFloatingPhase(const Sector sector_prev) {
-    if (sector_prev == Sector::S0 || sector_prev == Sector::S3) {
-        return Phase::B;
-    }
-    else if (sector_prev == Sector::S4 || sector_prev == Sector::S4) {
-        return Phase::C; 
-    }
-    else {
-        return Phase::A; 
-    }
-}
-
-Dir getDir(const int32_t delta_v) {
-    if (delta_v > 0) {
-        return Dir::Up;
-    }
-    else {
-        return Dir::Down;
-    }
-}
-
-Sector getNextSector(const Phase phase, const Dir dir) {
-    if (phase == Phase::A && dir == Dir::Up) {
-        return Sector::S1;
-    }
-    else if (phase == Phase::A && dir == Dir::Down) {
-        return Sector::S4;
-    }
-    else if (phase == Phase::B && dir == Dir::Up) {
-        return Sector::S3;
-    }
-    else if (phase == Phase::B && dir == Dir::Down) {
-        return Sector::S0;
-    }
-    else if (phase == Phase::C && dir == Dir::Up) {
-        return Sector::S5;
-    }
-    else {
-        return Sector::S2;
-    }
-}
-
-std::optional<Sector> getSector(const uint32_t tcom_last, 
-                                const uint32_t tcom_curr, 
-                                const int32_t v_bus, 
-                                const Sector sector_prev, 
-                                const int32_t v_ph,
-                                const Sign sign_prev) {
-    if (tcom_curr - tcom_last < DEAD_TIME) {
-        return std::nullopt;
-    }
-
-    const Phase floating_ph = getFloatingPhase(sector_prev);
-    const int32_t v_neutral = v_bus/2;
-    const int32_t delta_v = v_ph - v_neutral;
-    const int32_t abs_delta_v = std::abs(delta_v);
-    const Sign sign_curr = (delta_v == abs_delta_v) ? Sign::Posi : Sign::Negi;
-    // If no ZC
-    if (sign_curr == sign_prev || abs_delta_v >= V_HYST) {
-        return std::nullopt;
-    } 
-
-    const Dir dir = getDir(delta_v);
-    const Sector sector = getNextSector(floating_ph, dir);
-
-    return sector;
-}
-
-bool isPwmOn(const uint32_t timer) {
-    if (timer > PWM_OFF) {
-        return false;
-    }
-    return true;
-}
-
-std::optional<uint32_t> getCmdArray(const uint32_t tcom_last, 
-                                    const uint32_t tcom_curr, 
-                                    const int32_t v_bus, 
-                                    const Sector sector_prev, 
-                                    const int32_t v_ph,
-                                    const Sign sign_prev,
-                                    const uint32_t timer) {
-    if (isPwmOn(timer)) {
-        return std::nullopt;
-    } 
-
-    auto temp = getSector(tcom_last, tcom_curr, v_bus, sector_prev, v_ph, sign_prev);
-    if (!temp.has_value()) {
-        return std::nullopt;
-    }
-
-    return SSC(temp.value());
-}
-
-void DWT_Init(void) {
-    CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;  // Enable trace
-    DWT->CYCCNT = 0;                                  // Reset counter
-    DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;             // Enable counter
-}
-
-void DWT_Reset(void) {
-    DWT->CYCCNT = 0;                                  // Reset counter
-}
-
-uint32_t DWT_GetCycles(void) {
-    return DWT->CYCCNT;
 }
 
 static inline void MOSFET_WriteAll(uint32_t phase_pattern) {
