@@ -16,6 +16,11 @@
 #define LED_PIN GPIO_PIN_5
 #define LED_PORT GPIOA
 
+#define CLOCK_FREQ 170000000
+#define DELAY_SLAVE_TRIGGER_NS 20.3 // Delay btwn OC1 and blanking slave TIM trigger (ns)
+#define DELAY_TOTAL_PWM_BLANKING_NS 700 // Delqy before the t_off is considered clean for ADC conversions (ns)
+#define DELAY_PWM_BLANKING_TICK ((DELAY_TOTAL_PWM_BLANKING_NS-DELAY_SLAVE_TRIGGER_NS)*0.000000001*CLOCK_FREQ + 3)
+
 ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;
 TIM_HandleTypeDef htim1;
@@ -208,6 +213,7 @@ int main(void)
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+    // HAL_TIM_OC_Start(&htim1, TIM_CHANNEL_4);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
@@ -335,7 +341,7 @@ static void TIM1_Init(void)
 
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 0;
-  htim1.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED1;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim1.Init.Period = 3542; // 20.835us*2=41.671us (24kHz)
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
@@ -350,7 +356,11 @@ static void TIM1_Init(void)
   if (HAL_TIM_PWM_Init(&htim1) != HAL_OK) {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_UPDATE;
+  if (HAL_TIM_OC_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_OC1;
   sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK) {
@@ -374,6 +384,13 @@ static void TIM1_Init(void)
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK) {
     Error_Handler();
   }
+//   sConfigOC.OCMode = TIM_OCMODE_TOGGLE;
+//   sConfigOC.Pulse = 1000;
+//   if (HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
+//   {
+//     Error_Handler();
+//   }
+  __HAL_TIM_ENABLE_OCxPRELOAD(&htim1, TIM_CHANNEL_4);
   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_ENABLE;
   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_ENABLE;
   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
@@ -396,11 +413,6 @@ static void TIM1_Init(void)
 
 static void TIM3_Init(void)
 {
-
-  /* USER CODE BEGIN TIM3_Init 0 */
-
-  /* USER CODE END TIM3_Init 0 */
-
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_SlaveConfigTypeDef sSlaveConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
@@ -412,7 +424,7 @@ static void TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 0;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 119;
+  htim3.Init.Period = 170;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -438,25 +450,23 @@ static void TIM3_Init(void)
   {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_OC1;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_TOGGLE;
-  sConfigOC.Pulse = 119;
+  sConfigOC.Pulse = DELAY_PWM_BLANKING_TICK;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_OC_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN TIM3_Init 2 */
+  __HAL_TIM_ENABLE_OCxPRELOAD(&htim3, TIM_CHANNEL_1);
 
-  /* USER CODE END TIM3_Init 2 */
   HAL_TIM_MspPostInit(&htim3);
-
 }
 
 void GPIO_Init(void)

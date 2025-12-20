@@ -154,3 +154,7 @@ However, we also must consider the falt of:
  - System: System-level interrupts
  - (optional) Kill switch, vbus voltage, crystal fails
 And the other interrupt must be disabled
+
+## V2
+
+A adc reading is at least 15 cycles. We have to measure 2 current (third can be guessed) + 
