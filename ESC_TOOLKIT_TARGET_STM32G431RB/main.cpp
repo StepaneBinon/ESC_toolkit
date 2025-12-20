@@ -208,21 +208,20 @@ volatile uint32_t count2=0;
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
     if (hadc->Instance == ADC1) {
-        HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);    // Turn ON
-        HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);    // Turn ON
-        HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);    // Turn ON
+        // GPIOA->BSRR = GPIO_PIN_5;
+        GPIOA->BSRR = (GPIO_PIN_5 << 16);
         // HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
         count1++;
     }
 }
 
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
-{
-    if (hadc->Instance == ADC1) {
-        HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-        count1++;
-    }
-}
+// void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+// {
+//     if (hadc->Instance == ADC1) {
+//         HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+//         count1++;
+//     }
+// }
 
 int main(void)
 {
@@ -251,14 +250,12 @@ int main(void)
 
     HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_values, 3);
 
-     HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);  // Turn OFF
-
     // Blink through each pin one at a time
     while (1) {
-        volatile uint16_t adc1_result = (uint16_t)(adc_values[0] & 0xFFFF);    // Master ADC (ADC1)
-        volatile uint16_t adc2_result = (uint16_t)(adc_values[0] >> 16);      // Slave ADC (ADC2)
-        volatile uint32_t count11=count1;
-        volatile uint32_t count22=count2;
+        // volatile uint16_t adc1_result = (uint16_t)(adc_values[0] & 0xFFFF);    // Master ADC (ADC1)
+        // volatile uint16_t adc2_result = (uint16_t)(adc_values[0] >> 16);      // Slave ADC (ADC2)
+        // volatile uint32_t count11=count1;
+        // volatile uint32_t count22=count2;
         // uint32_t phase_pattern = SSC(Sector::S0);
         // MOSFET_WriteAll(phase_pattern);
         // HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);    // Turn ON
@@ -336,13 +333,13 @@ void ADC1_Init(void)
 
     /** Configure the ADC multi-mode
      */
-    multimode.Mode = ADC_DUALMODE_INJECSIMULT;
-    multimode.DMAAccessMode = ADC_DMAACCESSMODE_12_10_BITS;
-    multimode.TwoSamplingDelay = ADC_TWOSAMPLINGDELAY_1CYCLE;
-    if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
-    {
-        Error_Handler();
-    }
+    // multimode.Mode = ADC_DUALMODE_INJECSIMULT;
+    // multimode.DMAAccessMode = ADC_DMAACCESSMODE_12_10_BITS;
+    // multimode.TwoSamplingDelay = ADC_TWOSAMPLINGDELAY_1CYCLE;
+    // if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
+    // {
+    //     Error_Handler();
+    // }
 
     // Configure Injected Channel 6
     sConfigInjected.InjectedChannel = ADC_CHANNEL_6;
@@ -351,30 +348,30 @@ void ADC1_Init(void)
     sConfigInjected.InjectedSingleDiff = ADC_SINGLE_ENDED;
     sConfigInjected.InjectedOffsetNumber = ADC_OFFSET_NONE;
     sConfigInjected.InjectedOffset = 0;
-    sConfigInjected.InjectedNbrOfConversion = 3;
+    sConfigInjected.InjectedNbrOfConversion = 1;
     sConfigInjected.InjectedDiscontinuousConvMode = ENABLE;
     sConfigInjected.AutoInjectedConv = DISABLE;
     sConfigInjected.QueueInjectedContext = DISABLE;
     sConfigInjected.ExternalTrigInjecConv = ADC_EXTERNALTRIGINJEC_T3_CC1;
-    sConfigInjected.ExternalTrigInjecConvEdge = ADC_EXTERNALTRIGINJECCONV_EDGE_RISINGFALLING;
+    sConfigInjected.ExternalTrigInjecConvEdge = ADC_EXTERNALTRIGINJECCONV_EDGE_RISING;
     sConfigInjected.InjecOversamplingMode = DISABLE;
     if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK) {
         Error_Handler();
     }
 
     // Configure Injected Channel 7
-    sConfigInjected.InjectedChannel = ADC_CHANNEL_7;
-    sConfigInjected.InjectedRank = ADC_INJECTED_RANK_2;
-    if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK) {
-        Error_Handler();
-    }
+    // sConfigInjected.InjectedChannel = ADC_CHANNEL_7;
+    // sConfigInjected.InjectedRank = ADC_INJECTED_RANK_2;
+    // if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK) {
+    //     Error_Handler();
+    // }
 
     // Configure Injected Channel 8
-    sConfigInjected.InjectedChannel = ADC_CHANNEL_8;
-    sConfigInjected.InjectedRank = ADC_INJECTED_RANK_3;
-    if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK) {
-        Error_Handler();
-    }
+    // sConfigInjected.InjectedChannel = ADC_CHANNEL_8;
+    // sConfigInjected.InjectedRank = ADC_INJECTED_RANK_3;
+    // if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK) {
+    //     Error_Handler();
+    // }
     
     HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
 }
@@ -414,7 +411,7 @@ static void TIM1_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 1000;
+  sConfigOC.Pulse = 100;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -465,7 +462,7 @@ static void TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 0;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 170;
+  htim3.Init.Period = DELAY_PWM_BLANKING_TICK+10;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -497,9 +494,9 @@ static void TIM3_Init(void)
   {
     Error_Handler();
   }
-  sConfigOC.OCMode = TIM_OCMODE_TOGGLE;
+  sConfigOC.OCMode = TIM_OCMODE_RETRIGERRABLE_OPM1;
   sConfigOC.Pulse = DELAY_PWM_BLANKING_TICK;
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_LOW;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_OC_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
   {
