@@ -40,6 +40,9 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+extern DMA_HandleTypeDef hdma_adc1;
+extern ADC_HandleTypeDef hadc1;
+extern ADC_HandleTypeDef hadc2;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -199,19 +202,48 @@ void SysTick_Handler(void)
 /* please refer to the startup file (startup_stm32g4xx.s).                    */
 /******************************************************************************/
 
+
 /**
-  * @brief This function handles EXTI line[15:10] interrupts.
+  * @brief This function handles DMA1 channel1 global interrupt.
   */
-// void EXTI15_10_IRQHandler(void)
-// {
-//   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+void DMA1_Channel1_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Channel1_IRQn 0 */
 
-//   /* USER CODE END EXTI15_10_IRQn 0 */
-//   BSP_PB_IRQHandler(BUTTON_USER);
-//   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+  /* USER CODE END DMA1_Channel1_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_adc1);
+  /* USER CODE BEGIN DMA1_Channel1_IRQn 1 */
 
-//   /* USER CODE END EXTI15_10_IRQn 1 */
-// }
+  /* USER CODE END DMA1_Channel1_IRQn 1 */
+}
+
+/**
+  * @brief This function handles ADC1 and ADC2 global interrupt.
+  */
+void ADC1_2_IRQHandler(void)
+{
+  /* USER CODE BEGIN ADC1_2_IRQn 0 */
+
+  /* USER CODE END ADC1_2_IRQn 0 */
+  HAL_ADC_IRQHandler(&hadc1);
+  HAL_ADC_IRQHandler(&hadc2);
+  /* USER CODE BEGIN ADC1_2_IRQn 1 */
+
+  /* USER CODE END ADC1_2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMAMUX overrun interrupt.
+  */
+void DMAMUX_OVR_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMAMUX_OVR_IRQn 0 */
+
+  /* USER CODE END DMAMUX_OVR_IRQn 0 */
+  /* USER CODE BEGIN DMAMUX_OVR_IRQn 1 */
+
+  /* USER CODE END DMAMUX_OVR_IRQn 1 */
+}
 
 /* USER CODE BEGIN 1 */
 

@@ -23,11 +23,14 @@
 
 ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;
+DMA_HandleTypeDef hdma_adc1;
+
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim3;
 
 void SystemClock_Config(void);
 void GPIO_Init(void);
+void DMA_Init(void);
 void ADC1_Init(void);
 static void TIM1_Init(void);
 static void TIM3_Init(void);
@@ -198,6 +201,29 @@ void ReadInjectedADC(volatile uint32_t* results)
     HAL_ADCEx_InjectedStop(&hadc1);
 }
 
+
+volatile uint32_t count1=0;
+volatile uint32_t count2=0;
+
+void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+    if (hadc->Instance == ADC1) {
+        HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);    // Turn ON
+        HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);    // Turn ON
+        HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);    // Turn ON
+        // HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+        count1++;
+    }
+}
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+    if (hadc->Instance == ADC1) {
+        HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+        count1++;
+    }
+}
+
 int main(void)
 {
     // Reset of all peripherals, Initializes the Flash interface and the Systick.
@@ -206,31 +232,41 @@ int main(void)
     SystemClock_Config();
     // Initialize all configured peripherals
     GPIO_Init();
+    DMA_Init();
     DWT_Init();
     ADC1_Init();
     TIM1_Init();
     TIM3_Init();
+
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-    // HAL_TIM_OC_Start(&htim1, TIM_CHANNEL_4);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
-
     HAL_TIM_OC_Start(&htim3, TIM_CHANNEL_1);
+    HAL_ADCEx_InjectedStart_IT(&hadc1);
 
     volatile uint32_t adc_values[3];
+
+    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_values, 3);
+
+     HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);  // Turn OFF
+
     // Blink through each pin one at a time
     while (1) {
-        uint32_t phase_pattern = SSC(Sector::S0);
-        MOSFET_WriteAll(phase_pattern);
-        HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);    // Turn ON
-        HAL_Delay(500);
-        MOSFET_WriteAll(phase_pattern << 16);
-        HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);  // Turn OFF
-        HAL_Delay(500);
-        ReadInjectedADC(adc_values);
+        volatile uint16_t adc1_result = (uint16_t)(adc_values[0] & 0xFFFF);    // Master ADC (ADC1)
+        volatile uint16_t adc2_result = (uint16_t)(adc_values[0] >> 16);      // Slave ADC (ADC2)
+        volatile uint32_t count11=count1;
+        volatile uint32_t count22=count2;
+        // uint32_t phase_pattern = SSC(Sector::S0);
+        // MOSFET_WriteAll(phase_pattern);
+        // HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);    // Turn ON
+        // HAL_Delay(500);
+        // MOSFET_WriteAll(phase_pattern << 16);
+        // HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);  // Turn OFF
+        // HAL_Delay(500);
+        // ReadInjectedADC(adc_values);
     }
 }
 
@@ -271,6 +307,7 @@ void SystemClock_Config(void)
 
 void ADC1_Init(void)
 {
+    ADC_MultiModeTypeDef multimode = {0};
     ADC_InjectionConfTypeDef sConfigInjected = {0};
     
     // Common config
@@ -290,10 +327,20 @@ void ADC1_Init(void)
     // hadc1.Init.ExternalTrigConvEdge = ADC_SOFTWARE_START;
     // hadc1.Init.SamplingMode = ADC_SOFTWARE_START;
     hadc1.Init.DMAContinuousRequests = DISABLE;
-    hadc1.Init.Overrun = ADC_OVR_DATA_PRESERVED;
+    hadc1.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
     hadc1.Init.OversamplingMode = DISABLE;
     // hadc1.Init.Oversampling = ADC_OVR_DATA_PRESERVED;
     if (HAL_ADC_Init(&hadc1) != HAL_OK) {
+        Error_Handler();
+    }
+
+    /** Configure the ADC multi-mode
+     */
+    multimode.Mode = ADC_DUALMODE_INJECSIMULT;
+    multimode.DMAAccessMode = ADC_DMAACCESSMODE_12_10_BITS;
+    multimode.TwoSamplingDelay = ADC_TWOSAMPLINGDELAY_1CYCLE;
+    if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
+    {
         Error_Handler();
     }
 
@@ -305,11 +352,11 @@ void ADC1_Init(void)
     sConfigInjected.InjectedOffsetNumber = ADC_OFFSET_NONE;
     sConfigInjected.InjectedOffset = 0;
     sConfigInjected.InjectedNbrOfConversion = 3;
-    sConfigInjected.InjectedDiscontinuousConvMode = DISABLE;
+    sConfigInjected.InjectedDiscontinuousConvMode = ENABLE;
     sConfigInjected.AutoInjectedConv = DISABLE;
     sConfigInjected.QueueInjectedContext = DISABLE;
-    sConfigInjected.ExternalTrigInjecConv = ADC_INJECTED_SOFTWARE_START;
-    sConfigInjected.ExternalTrigInjecConvEdge = ADC_EXTERNALTRIGINJECCONV_EDGE_NONE;
+    sConfigInjected.ExternalTrigInjecConv = ADC_EXTERNALTRIGINJEC_T3_CC1;
+    sConfigInjected.ExternalTrigInjecConvEdge = ADC_EXTERNALTRIGINJECCONV_EDGE_RISINGFALLING;
     sConfigInjected.InjecOversamplingMode = DISABLE;
     if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK) {
         Error_Handler();
@@ -384,12 +431,6 @@ static void TIM1_Init(void)
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK) {
     Error_Handler();
   }
-//   sConfigOC.OCMode = TIM_OCMODE_TOGGLE;
-//   sConfigOC.Pulse = 1000;
-//   if (HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
-//   {
-//     Error_Handler();
-//   }
   __HAL_TIM_ENABLE_OCxPRELOAD(&htim1, TIM_CHANNEL_4);
   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_ENABLE;
   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_ENABLE;
@@ -468,6 +509,27 @@ static void TIM3_Init(void)
 
   HAL_TIM_MspPostInit(&htim3);
 }
+
+/**
+  * Enable DMA controller clock
+  */
+void DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMAMUX1_CLK_ENABLE();
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+  /* DMAMUX_OVR_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMAMUX_OVR_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMAMUX_OVR_IRQn);
+
+}
+
 
 void GPIO_Init(void)
 {

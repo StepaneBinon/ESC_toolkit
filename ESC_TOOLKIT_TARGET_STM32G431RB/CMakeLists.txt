@@ -58,6 +58,8 @@ set(HAL_SOURCES
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_adc_ex.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_adc.c
+    ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_dma_ex.c
+    ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_dma.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_rcc_ex.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_rcc.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_cortex.c
