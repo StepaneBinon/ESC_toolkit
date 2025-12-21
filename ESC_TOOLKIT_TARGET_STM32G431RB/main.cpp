@@ -90,12 +90,9 @@ volatile uint32_t count2=0;
 
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
-    if (hadc->Instance == ADC1) {
-        // GPIOA->BSRR = GPIO_PIN_5;
-        GPIOA->BSRR = (GPIO_PIN_5 << 16);
-        // HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-        count1++;
-    }
+    GPIOA->BSRR = GPIO_PIN_5;
+    GPIOA->BSRR = (GPIO_PIN_5 << 16);
+    count1++;
 }
 
 // void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
@@ -106,6 +103,8 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 //     }
 // }
 
+    volatile uint32_t adc_values[3];
+
 int main(void)
 {
     // Reset of all peripherals, Initializes the Flash interface and the Systick.
@@ -114,8 +113,7 @@ int main(void)
     SystemClock_Config();
     // Initialize all configured peripherals
     GPIO_Init();
-    DMA_Init();
-    DWT_Init();
+    // DMA_Init();
     ADC1_Init();
     TIM1_Init();
     TIM3_Init();
@@ -127,11 +125,11 @@ int main(void)
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
     HAL_TIM_OC_Start(&htim3, TIM_CHANNEL_1);
+
     HAL_ADCEx_InjectedStart_IT(&hadc1);
 
-    volatile uint32_t adc_values[3];
 
-    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_values, 3);
+    // HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_values, 3);
 
     // Blink through each pin one at a time
     while (1) {
@@ -187,76 +185,90 @@ void SystemClock_Config(void)
 
 void ADC1_Init(void)
 {
-    ADC_MultiModeTypeDef multimode = {0};
-    ADC_InjectionConfTypeDef sConfigInjected = {0};
-    
-    // Common config
-    hadc1.Instance = ADC1;
-    hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
-    hadc1.Init.Resolution = ADC_RESOLUTION_12B;
-    hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-    hadc1.Init.GainCompensation = 0;
-    hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
-    hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
-    hadc1.Init.LowPowerAutoWait = DISABLE;
-    hadc1.Init.ContinuousConvMode = DISABLE;
-    hadc1.Init.NbrOfConversion = 1;
-    hadc1.Init.NbrOfDiscConversion = 1;
-    hadc1.Init.DiscontinuousConvMode = DISABLE;
-    // hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-    // hadc1.Init.ExternalTrigConvEdge = ADC_SOFTWARE_START;
-    // hadc1.Init.SamplingMode = ADC_SOFTWARE_START;
-    hadc1.Init.DMAContinuousRequests = DISABLE;
-    hadc1.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
-    hadc1.Init.OversamplingMode = DISABLE;
-    // hadc1.Init.Oversampling = ADC_OVR_DATA_PRESERVED;
-    if (HAL_ADC_Init(&hadc1) != HAL_OK) {
-        Error_Handler();
-    }
 
-    /** Configure the ADC multi-mode
-     */
-    // multimode.Mode = ADC_DUALMODE_INJECSIMULT;
-    // multimode.DMAAccessMode = ADC_DMAACCESSMODE_12_10_BITS;
-    // multimode.TwoSamplingDelay = ADC_TWOSAMPLINGDELAY_1CYCLE;
-    // if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
-    // {
-    //     Error_Handler();
-    // }
+  /* USER CODE BEGIN ADC1_Init 0 */
 
-    // Configure Injected Channel 6
-    sConfigInjected.InjectedChannel = ADC_CHANNEL_6;
-    sConfigInjected.InjectedRank = ADC_INJECTED_RANK_1;
-    sConfigInjected.InjectedSamplingTime = ADC_SAMPLETIME_2CYCLES_5;
-    sConfigInjected.InjectedSingleDiff = ADC_SINGLE_ENDED;
-    sConfigInjected.InjectedOffsetNumber = ADC_OFFSET_NONE;
-    sConfigInjected.InjectedOffset = 0;
-    sConfigInjected.InjectedNbrOfConversion = 1;
-    sConfigInjected.InjectedDiscontinuousConvMode = ENABLE;
-    sConfigInjected.AutoInjectedConv = DISABLE;
-    sConfigInjected.QueueInjectedContext = DISABLE;
-    sConfigInjected.ExternalTrigInjecConv = ADC_EXTERNALTRIGINJEC_T3_CC1;
-    sConfigInjected.ExternalTrigInjecConvEdge = ADC_EXTERNALTRIGINJECCONV_EDGE_RISING;
-    sConfigInjected.InjecOversamplingMode = DISABLE;
-    if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK) {
-        Error_Handler();
-    }
+  /* USER CODE END ADC1_Init 0 */
 
-    // Configure Injected Channel 7
-    // sConfigInjected.InjectedChannel = ADC_CHANNEL_7;
-    // sConfigInjected.InjectedRank = ADC_INJECTED_RANK_2;
-    // if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK) {
-    //     Error_Handler();
-    // }
+  ADC_MultiModeTypeDef multimode = {0};
+  ADC_InjectionConfTypeDef sConfigInjected = {0};
 
-    // Configure Injected Channel 8
-    // sConfigInjected.InjectedChannel = ADC_CHANNEL_8;
-    // sConfigInjected.InjectedRank = ADC_INJECTED_RANK_3;
-    // if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK) {
-    //     Error_Handler();
-    // }
-    
-    HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+
+  /** Common config
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.GainCompensation = 0;
+  hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc1.Init.LowPowerAutoWait = DISABLE;
+  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.NbrOfConversion = 3;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
+  hadc1.Init.OversamplingMode = DISABLE;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure the ADC multi-mode
+  */
+  multimode.Mode = ADC_DUALMODE_INJECSIMULT;
+  multimode.DMAAccessMode = ADC_DMAACCESSMODE_12_10_BITS;
+  multimode.TwoSamplingDelay = ADC_TWOSAMPLINGDELAY_1CYCLE;
+  if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Injected Channel
+  */
+  sConfigInjected.InjectedChannel = ADC_CHANNEL_6;
+  sConfigInjected.InjectedRank = ADC_INJECTED_RANK_1;
+  sConfigInjected.InjectedSamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+  sConfigInjected.InjectedSingleDiff = ADC_SINGLE_ENDED;
+  sConfigInjected.InjectedOffsetNumber = ADC_OFFSET_NONE;
+  sConfigInjected.InjectedOffset = 0;
+  sConfigInjected.InjectedNbrOfConversion = 3;
+  sConfigInjected.InjectedDiscontinuousConvMode = ENABLE;
+  sConfigInjected.AutoInjectedConv = DISABLE;
+  sConfigInjected.QueueInjectedContext = DISABLE;
+  sConfigInjected.ExternalTrigInjecConv = ADC_EXTERNALTRIGINJEC_T3_CC1;
+  sConfigInjected.ExternalTrigInjecConvEdge = ADC_EXTERNALTRIGINJECCONV_EDGE_RISING;
+  sConfigInjected.InjecOversamplingMode = DISABLE;
+  if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Injected Channel
+  */
+  sConfigInjected.InjectedChannel = ADC_CHANNEL_7;
+  sConfigInjected.InjectedRank = ADC_INJECTED_RANK_2;
+  if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Injected Channel
+  */
+  sConfigInjected.InjectedChannel = ADC_CHANNEL_8;
+  sConfigInjected.InjectedRank = ADC_INJECTED_RANK_3;
+  if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 static void TIM1_Init(void)
@@ -371,7 +383,7 @@ static void TIM3_Init(void)
   {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_OC1;
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
   {
@@ -464,8 +476,17 @@ void Error_Handler(void)
   * @param  line: assert_param error line source number
   * @retval None
   */
-void assert_failed(uint8_t *file, uint32_t line) {
-    // printf("Wrong parameters value: file %s on line %d\r\n", file, line);
-    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);    // Turn ON
+void assert_failed(uint8_t *file, uint32_t line)
+{
+    (void)file;
+    (void)line;
+
+    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET); // solid ON
+
+    __disable_irq();  
+    __BKPT(0);
+    while (1) {
+        __NOP();
+    }
 }
 #endif /* USE_FULL_ASSERT */
