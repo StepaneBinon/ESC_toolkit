@@ -88,16 +88,17 @@ void ReadInjectedADC(volatile uint32_t* results)
 
 volatile uint32_t count1=0;
 volatile uint32_t count2=0;
+volatile uint16_t adc_values[3];
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
     GPIOA->BSRR = GPIO_PIN_5;
     __NOP(); __NOP(); __NOP(); __NOP(); __NOP(); __NOP();
-  GPIOA->BSRR = (GPIO_PIN_5 << 16);   // reset PA5
-  count1++;
+    GPIOA->BSRR = (GPIO_PIN_5 << 16);   // reset PA5
+    count1++;
+    // HAL_ADC_Start_DMA(hadc, (uint32_t*)adc_values, 3);
 }
 
-volatile uint16_t adc_values[3];
 
 int main(void)
 {
@@ -206,7 +207,7 @@ void ADC1_Init(void)
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConv = ADC_EXTERNALTRIG_T3_TRGO;
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_RISING;
-  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
   hadc1.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
   hadc1.Init.OversamplingMode = DISABLE;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
