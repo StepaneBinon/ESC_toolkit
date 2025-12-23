@@ -18,8 +18,9 @@
 
 #define CLOCK_FREQ 170000000
 #define DELAY_SLAVE_TRIGGER_NS 20.3 // Delay btwn OC1 and blanking slave TIM trigger (ns)
-#define DELAY_TOTAL_PWM_BLANKING_NS 700 // Delqy before the t_off is considered clean for ADC conversions (ns)
-#define DELAY_PWM_BLANKING_TICK ((DELAY_TOTAL_PWM_BLANKING_NS-DELAY_SLAVE_TRIGGER_NS)*0.000000001*CLOCK_FREQ + 3)
+#define DELAY_TOTAL_PWM_BLANKING_NS 700 // Delay before the t_off is considered clean for ADC conversions (ns)
+// #define DELAY_PWM_BLANKING_TICK ((DELAY_TOTAL_PWM_BLANKING_NS-DELAY_SLAVE_TRIGGER_NS)*0.000000001*CLOCK_FREQ + 3)
+#define DELAY_PWM_BLANKING_TICK 300
 
 ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;
@@ -30,7 +31,7 @@ TIM_HandleTypeDef htim3;
 
 void SystemClock_Config(void);
 void GPIO_Init(void);
-void DMA_Init(void);
+// void DMA_Init(void);
 void ADC1_Init(void);
 static void TIM1_Init(void);
 static void TIM3_Init(void);
@@ -88,20 +89,18 @@ void ReadInjectedADC(volatile uint32_t* results)
 volatile uint32_t count1=0;
 volatile uint32_t count2=0;
 
-void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
-    GPIOA->BSRR = GPIO_PIN_5;
-    GPIOA->BSRR = (GPIO_PIN_5 << 16);
-    count1++;
+  GPIOA->BSRR = GPIO_PIN_5;           // set PA5
+  __NOP();
+  __NOP();
+  __NOP();
+  __NOP();
+  __NOP();
+  __NOP();
+  GPIOA->BSRR = (GPIO_PIN_5 << 16);   // reset PA5
+  count1++;
 }
-
-// void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
-// {
-//     if (hadc->Instance == ADC1) {
-//         HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-//         count1++;
-//     }
-// }
 
     volatile uint32_t adc_values[3];
 
@@ -126,8 +125,7 @@ int main(void)
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
     HAL_TIM_OC_Start(&htim3, TIM_CHANNEL_1);
 
-    HAL_ADCEx_InjectedStart_IT(&hadc1);
-
+    HAL_ADC_Start_IT(&hadc1);
 
     // HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_values, 3);
 
@@ -191,7 +189,7 @@ void ADC1_Init(void)
   /* USER CODE END ADC1_Init 0 */
 
   ADC_MultiModeTypeDef multimode = {0};
-  ADC_InjectionConfTypeDef sConfigInjected = {0};
+  ADC_ChannelConfTypeDef sConfig = {0};
 
   /* USER CODE BEGIN ADC1_Init 1 */
 
@@ -210,6 +208,8 @@ void ADC1_Init(void)
   hadc1.Init.ContinuousConvMode = DISABLE;
   hadc1.Init.NbrOfConversion = 3;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConv = ADC_EXTERNALTRIG_T3_TRGO;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_RISING;
   hadc1.Init.DMAContinuousRequests = DISABLE;
   hadc1.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
   hadc1.Init.OversamplingMode = DISABLE;
@@ -220,48 +220,39 @@ void ADC1_Init(void)
 
   /** Configure the ADC multi-mode
   */
-  multimode.Mode = ADC_DUALMODE_INJECSIMULT;
-  multimode.DMAAccessMode = ADC_DMAACCESSMODE_12_10_BITS;
-  multimode.TwoSamplingDelay = ADC_TWOSAMPLINGDELAY_1CYCLE;
+  multimode.Mode = ADC_MODE_INDEPENDENT;
   if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
   {
     Error_Handler();
   }
 
-  /** Configure Injected Channel
+  /** Configure Regular Channel
   */
-  sConfigInjected.InjectedChannel = ADC_CHANNEL_6;
-  sConfigInjected.InjectedRank = ADC_INJECTED_RANK_1;
-  sConfigInjected.InjectedSamplingTime = ADC_SAMPLETIME_2CYCLES_5;
-  sConfigInjected.InjectedSingleDiff = ADC_SINGLE_ENDED;
-  sConfigInjected.InjectedOffsetNumber = ADC_OFFSET_NONE;
-  sConfigInjected.InjectedOffset = 0;
-  sConfigInjected.InjectedNbrOfConversion = 3;
-  sConfigInjected.InjectedDiscontinuousConvMode = ENABLE;
-  sConfigInjected.AutoInjectedConv = DISABLE;
-  sConfigInjected.QueueInjectedContext = DISABLE;
-  sConfigInjected.ExternalTrigInjecConv = ADC_EXTERNALTRIGINJEC_T3_CC1;
-  sConfigInjected.ExternalTrigInjecConvEdge = ADC_EXTERNALTRIGINJECCONV_EDGE_RISING;
-  sConfigInjected.InjecOversamplingMode = DISABLE;
-  if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK)
+  sConfig.Channel = ADC_CHANNEL_6;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+  sConfig.SingleDiff = ADC_SINGLE_ENDED;
+  sConfig.OffsetNumber = ADC_OFFSET_NONE;
+  sConfig.Offset = 0;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
   }
 
-  /** Configure Injected Channel
+  /** Configure Regular Channel
   */
-  sConfigInjected.InjectedChannel = ADC_CHANNEL_7;
-  sConfigInjected.InjectedRank = ADC_INJECTED_RANK_2;
-  if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK)
+  sConfig.Channel = ADC_CHANNEL_7;
+  sConfig.Rank = ADC_REGULAR_RANK_2;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
   }
 
-  /** Configure Injected Channel
+  /** Configure Regular Channel
   */
-  sConfigInjected.InjectedChannel = ADC_CHANNEL_8;
-  sConfigInjected.InjectedRank = ADC_INJECTED_RANK_3;
-  if (HAL_ADCEx_InjectedConfigChannel(&hadc1, &sConfigInjected) != HAL_OK)
+  sConfig.Channel = ADC_CHANNEL_8;
+  sConfig.Rank = ADC_REGULAR_RANK_3;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
   }
@@ -383,14 +374,14 @@ static void TIM3_Init(void)
   {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_OC1;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_RETRIGERRABLE_OPM1;
-  sConfigOC.Pulse = DELAY_PWM_BLANKING_TICK;
+  sConfigOC.Pulse = DELAY_PWM_BLANKING_TICK; 
   sConfigOC.OCPolarity = TIM_OCPOLARITY_LOW;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_OC_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -405,22 +396,22 @@ static void TIM3_Init(void)
 /**
   * Enable DMA controller clock
   */
-void DMA_Init(void)
-{
+// void DMA_Init(void)
+// {
 
-  /* DMA controller clock enable */
-  __HAL_RCC_DMAMUX1_CLK_ENABLE();
-  __HAL_RCC_DMA1_CLK_ENABLE();
+//   /* DMA controller clock enable */
+//   __HAL_RCC_DMAMUX1_CLK_ENABLE();
+//   __HAL_RCC_DMA1_CLK_ENABLE();
 
-  /* DMA interrupt init */
-  /* DMA1_Channel1_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
-  /* DMAMUX_OVR_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMAMUX_OVR_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMAMUX_OVR_IRQn);
+//   /* DMA interrupt init */
+//   /* DMA1_Channel1_IRQn interrupt configuration */
+//   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
+//   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+//   /* DMAMUX_OVR_IRQn interrupt configuration */
+//   HAL_NVIC_SetPriority(DMAMUX_OVR_IRQn, 0, 0);
+//   HAL_NVIC_EnableIRQ(DMAMUX_OVR_IRQn);
 
-}
+// }
 
 
 void GPIO_Init(void)
