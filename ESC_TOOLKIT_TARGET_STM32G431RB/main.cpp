@@ -31,7 +31,7 @@ TIM_HandleTypeDef htim3;
 
 void SystemClock_Config(void);
 void GPIO_Init(void);
-// void DMA_Init(void);
+void DMA_Init(void);
 void ADC1_Init(void);
 static void TIM1_Init(void);
 static void TIM3_Init(void);
@@ -102,7 +102,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
   count1++;
 }
 
-    volatile uint32_t adc_values[3];
+volatile uint32_t adc_values[3];
 
 int main(void)
 {
@@ -112,7 +112,7 @@ int main(void)
     SystemClock_Config();
     // Initialize all configured peripherals
     GPIO_Init();
-    // DMA_Init();
+    DMA_Init();
     ADC1_Init();
     TIM1_Init();
     TIM3_Init();
@@ -125,9 +125,9 @@ int main(void)
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
     HAL_TIM_OC_Start(&htim3, TIM_CHANNEL_1);
 
-    HAL_ADC_Start_IT(&hadc1);
+    // HAL_ADC_Start_IT(&hadc1);
 
-    // HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_values, 3);
+    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_values, 3);
 
     // Blink through each pin one at a time
     while (1) {
@@ -396,22 +396,22 @@ static void TIM3_Init(void)
 /**
   * Enable DMA controller clock
   */
-// void DMA_Init(void)
-// {
+void DMA_Init(void)
+{
 
-//   /* DMA controller clock enable */
-//   __HAL_RCC_DMAMUX1_CLK_ENABLE();
-//   __HAL_RCC_DMA1_CLK_ENABLE();
+  /* DMA controller clock enable */
+  __HAL_RCC_DMAMUX1_CLK_ENABLE();
+  __HAL_RCC_DMA1_CLK_ENABLE();
 
-//   /* DMA interrupt init */
-//   /* DMA1_Channel1_IRQn interrupt configuration */
-//   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
-//   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
-//   /* DMAMUX_OVR_IRQn interrupt configuration */
-//   HAL_NVIC_SetPriority(DMAMUX_OVR_IRQn, 0, 0);
-//   HAL_NVIC_EnableIRQ(DMAMUX_OVR_IRQn);
+  /* DMA interrupt init */
+  /* DMA1_Channel1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+  /* DMAMUX_OVR_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMAMUX_OVR_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMAMUX_OVR_IRQn);
 
-// }
+}
 
 
 void GPIO_Init(void)
