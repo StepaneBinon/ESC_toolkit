@@ -91,18 +91,13 @@ volatile uint32_t count2=0;
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
-  GPIOA->BSRR = GPIO_PIN_5;           // set PA5
-  __NOP();
-  __NOP();
-  __NOP();
-  __NOP();
-  __NOP();
-  __NOP();
+    GPIOA->BSRR = GPIO_PIN_5;
+    __NOP(); __NOP(); __NOP(); __NOP(); __NOP(); __NOP();
   GPIOA->BSRR = (GPIO_PIN_5 << 16);   // reset PA5
   count1++;
 }
 
-volatile uint32_t adc_values[3];
+volatile uint16_t adc_values[3];
 
 int main(void)
 {
@@ -127,6 +122,7 @@ int main(void)
 
     // HAL_ADC_Start_IT(&hadc1);
 
+    HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
     HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_values, 3);
 
     // Blink through each pin one at a time
@@ -203,7 +199,7 @@ void ADC1_Init(void)
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.GainCompensation = 0;
   hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
-  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc1.Init.EOCSelection = ADC_EOC_SEQ_CONV;
   hadc1.Init.LowPowerAutoWait = DISABLE;
   hadc1.Init.ContinuousConvMode = DISABLE;
   hadc1.Init.NbrOfConversion = 3;
