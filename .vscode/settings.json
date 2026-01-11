@@ -1,0 +1,6 @@
+{
+    "cortex-debug.gdbPath": "gdb-multiarch",
+    "cortex-debug.stlinkPath": null,
+    "cortex-debug.variableUseNaturalFormat": true,
+    // "cmake.cmakePath": "/usr/bin/cmake",
+}
