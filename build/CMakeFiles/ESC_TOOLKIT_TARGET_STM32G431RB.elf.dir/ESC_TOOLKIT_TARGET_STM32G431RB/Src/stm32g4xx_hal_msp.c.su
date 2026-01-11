@@ -1,0 +1,6 @@
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_hal_msp.c:6:6:HAL_MspInit	16	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_hal_msp.c:22:6:HAL_ADC_MspInit	128	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_hal_msp.c:118:6:HAL_ADC_MspDeInit	16	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_hal_msp.c:155:6:HAL_TIM_Base_MspInit	24	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_hal_msp.c:175:6:HAL_TIM_MspPostInit	48	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_hal_msp.c:242:6:HAL_TIM_Base_MspDeInit	16	static

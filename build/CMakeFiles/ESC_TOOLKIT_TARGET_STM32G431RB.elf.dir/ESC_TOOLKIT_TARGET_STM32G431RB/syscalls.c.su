@@ -1,0 +1,10 @@
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:12:6:_exit	16	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:19:5:_close	16	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:24:5:_fstat	16	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:30:5:_isatty	16	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:35:5:_lseek	24	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:42:5:_read	24	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:49:5:_write	24	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:74:7:_sbrk	24	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:89:5:_getpid	4	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/syscalls.c:93:5:_kill	16	static

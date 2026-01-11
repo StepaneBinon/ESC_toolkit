@@ -1,0 +1,12 @@
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:72:6:NMI_Handler	4	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:87:6:HardFault_Handler	4	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:102:6:MemManage_Handler	4	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:117:6:BusFault_Handler	4	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:132:6:UsageFault_Handler	4	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:147:6:SVC_Handler	4	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:160:6:DebugMon_Handler	4	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:173:6:PendSV_Handler	4	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:187:6:SysTick_Handler	8	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:209:6:DMA1_Channel1_IRQHandler	8	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:223:6:ADC1_2_IRQHandler	8	static
+/home/step/ESC_toolkit/ESC_TOOLKIT_TARGET_STM32G431RB/Src/stm32g4xx_it.c:238:6:DMAMUX_OVR_IRQHandler	4	static

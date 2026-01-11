@@ -1,7 +1,7 @@
 #include "main.hpp"
 
 #define MOSFET_PORT GPIOB
-#define AH GPIO_PIN_10
+#define AH GPIO_PIN_8
 #define AL GPIO_PIN_11
 #define BH GPIO_PIN_12
 #define BL GPIO_PIN_13
@@ -407,7 +407,6 @@ void DMA_Init(void)
   /* DMAMUX_OVR_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMAMUX_OVR_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMAMUX_OVR_IRQn);
-
 }
 
 
