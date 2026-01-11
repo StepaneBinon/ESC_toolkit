@@ -69,8 +69,6 @@ set(HAL_SOURCES
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_pwr_ex.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_tim.c
     ${HAL_DRIVER_DIR}/Src/stm32g4xx_hal_tim_ex.c
-    ${TARGET_ROOT}/Src/stm32g4xx_it.c
-    ${TARGET_ROOT}/Src/stm32g4xx_hal_msp.c
 )
 
 # CMSIS and Device Sources
@@ -87,7 +85,9 @@ set(DEVICE_SOURCES
 # Project Sources
 set(PROJECT_SOURCES
     ${TARGET_ROOT}/main.cpp
-    ${TARGET_ROOT}/syscalls.c  # Add this file - see below
+    ${TARGET_ROOT}/Src/syscalls.c  # Add this file - see below
+    ${TARGET_ROOT}/Src/stm32g4xx_it.c
+    ${TARGET_ROOT}/Src/stm32g4xx_hal_msp.c
     ${DEVICE_SOURCES}
     ${HAL_SOURCES}
 )
