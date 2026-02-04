@@ -54,6 +54,11 @@ set(CORE_ROOT ${CMAKE_SOURCE_DIR}/ESC_TOOLKIT_CORE)
 set(TARGET_ROOT ${CMAKE_SOURCE_DIR}/ESC_TOOLKIT_TARGET_STM32G431RB)
 set(CUBE_ROOT ${TARGET_ROOT}/STM32CubeG4)
 
+# TARGET Sources
+set(TARGET_SOURCES
+    ${TARGET_ROOT}/target.cpp
+)
+
 # HAL Driver Sources
 set(HAL_DRIVER_DIR ${CUBE_ROOT}/Drivers/STM32G4xx_HAL_Driver)
 set(HAL_SOURCES
@@ -84,12 +89,13 @@ set(DEVICE_SOURCES
 
 # Project Sources
 set(PROJECT_SOURCES
-    ${TARGET_ROOT}/main.cpp
+    ${CORE_ROOT}/main.cpp
     ${TARGET_ROOT}/Src/syscalls.c  # Add this file - see below
     ${TARGET_ROOT}/Src/stm32g4xx_it.c
     ${TARGET_ROOT}/Src/stm32g4xx_hal_msp.c
     ${DEVICE_SOURCES}
     ${HAL_SOURCES}
+    ${TARGET_SOURCES}
 )
 
 # Include Paths

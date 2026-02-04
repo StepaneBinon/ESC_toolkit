@@ -1,4 +1,21 @@
-#include
+
+
+#include <cstdint>
+#include <cstdlib>
+#include <optional>
+#include <iostream>
+
+volatile uint32_t count1=0;
+volatile uint32_t count2=0;
+volatile uint16_t adc_values[3];
+
+ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc2;
+DMA_HandleTypeDef hdma_adc1;
+TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim3;
+
+#include "target.hpp"
 
 int main(void)
 {
